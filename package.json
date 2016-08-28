@@ -2,13 +2,15 @@
   "name": "brew-buddy-frontend-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "engines": {
     "node": "4.4.3",
     "npm": "3.10.3"
   },
   "scripts": {
     "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "heroku-postbuild": "./node_modules/webpack/bin/webpack.js",
+    "start": "node server.js",
     "test": ""
   },
   "keywords": [],
