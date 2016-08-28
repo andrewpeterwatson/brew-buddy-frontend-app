@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "4.4.3",
+    "npm": "3.10.3"
+  },
   "scripts": {
     "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
     "test": ""
