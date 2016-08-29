@@ -37,7 +37,7 @@ angular.module('demoApp', [ngRoute])
   })
   .otherwise({
     redirectTo: '/'
-  })
+  });
 });
 
 // angular services
