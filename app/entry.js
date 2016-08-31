@@ -9,37 +9,33 @@ const angular = require('angular');
 const ngRoute = require('angular-route');
 
 // angular modules
-angular.module('demoApp', [ngRoute])
-.config('$routeProvider', function($routeProvider) {
+angular.module('brewBuddy', [ngRoute])
+.config(['$routeProvider', function($routeProvider){
   $routeProvider
-  .when('/', {
-    template: require('./component/main/main.html')
-  })
-  .when('/home', {
-    redirectTo: '/'
+  .when('/signup', {
+    template: require('./view/signup/signup.html'),
+    controller: 'SignupController',
+    controllerAs: 'signupCtrl'
   })
   .when('/signin', {
-    template: require('./component/signin/signin.html')
+    template: require('./view/signin/signin.html'),
+    controller: 'SigninController',
+    controllerAs: 'signinCtrl'
   })
-  .when('/signup', {
-    template: require('./component/signup/signup.html')
-  })
-  .when('/user', {
-    template: require('./component/user/user.html')
-  })
-  .when('/user/brew', {
-    // Not sure how /user/userthings files will be stored; below
-    // are temporary routes we can change later. CD
-    template: require('./component/user/brew/user-brew.html')
-  })
-  .when('/user/pastbrews', {
-    template: require('./component/user/pastbrews/past-brews.html')
+  .when('/home', {
+    template: require('./view/home/home.html'),
+    controller: 'HomeController',
+    controllerAs: 'homeCtrl'
   })
   .otherwise({
-    redirectTo: '/'
+    redirectTo: '/signin'
   });
-});
+}]);
 
 // angular services
+require('./service/auth-service');
 
-// angular components
+// angular controllers
+require('./view/signup');
+require('./view/signin');
+require('./view/home');
