@@ -10,7 +10,8 @@ function UserController($log, $q, userService) {
   this.user = {};
 
   this.getUserData = function() {
-    userService.fetchUser()
+    $log.debug('UserController.getUserData');
+    userService.fetchUsers()
     .then( (user) => {
       this.user = user;
     });
