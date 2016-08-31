@@ -6,11 +6,10 @@ require('./scss/base.scss');
 
 // npm modules
 const angular = require('angular');
-
+const ngDialog = require('ng-dialog');
 // angular modules
-angular.module('demoApp', []);
+angular.module('brewBuddy', [ngDialog]);
 
-// angular services
-
-// angular components
-require('./component/main');
+// require('./component/app-main');
+require('./component/app-home');
+require('./component/app-nav');
