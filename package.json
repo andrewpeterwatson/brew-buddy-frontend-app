@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js .",
     "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
-    "test": ""
+    "test": "echo\"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
     "autoprefixer": "^6.3.7",
     "babel-core": "^6.11.4",
     "babel-loader": "^6.2.4",
