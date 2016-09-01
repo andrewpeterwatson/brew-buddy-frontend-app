@@ -4,8 +4,30 @@
   ng-submit="userAccountCtrl.updateAccountInfo()">
 
     <h2> Account Information </h2>
-    <h4> Your Username: {{ userAccountModalCtrl.user.username }} </h4>
-    <label for=""
+    <p> For Username: {{ userAccountModalCtrl.user.username }} </p>
 
+    <label> Change Username: </label>
+    <input class="form-control" type="text">
+
+    <h3> Change Password </h3>
+    <label for="currentpassword"> Current Password: </label>
+    <input type="password" name="currentpassword" class="form-control">
+
+    <label for="newpassword"> New Password: </label>
+    <input type="password" name="newpassword" class="form-control">
+
+    <label for="confirmnewpassword"> Confirm New Password: </label>
+    <input type="password" name="confirmnewpassword" class="form-control">
+
+    <h3> Email </h3>
+    <p> Current Email Address: {{ userAccountModalCtrl.user.email }} </p>
+
+    <label for="newemail"> New Email Address: </label>
+    <input type="text" class="form-control">
+
+    <label for="confirmemail"> Confirm New Email: </label>
+    <input type="text" class="form-control">
+
+    <button type="submit" ng-submit="userAccountModalCtrl.submitChanges()"> Submit Changes </button>
   </form>
 </div>
