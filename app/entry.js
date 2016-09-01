@@ -27,6 +27,16 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'HomeController',
     controllerAs: 'homeCtrl'
   })
+  .when('/user', {
+    template: require('./view/user/user.html'),
+    controller: 'UserController',
+    controllerAs: 'userCtrl'
+  })
+  .when('/user/account', {
+    template: require('./view/user-account-modal/user-account-modal.html'),
+    controller: 'UserAccountModalController',
+    controllerAs: 'userAccountModalCtrl'
+  })
   .otherwise({
     redirectTo: '/signin'
   });
