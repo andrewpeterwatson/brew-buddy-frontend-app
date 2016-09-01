@@ -9,6 +9,7 @@ describe('testing brew-buddy-frontend-app services', () => {
       this.originService = originService;
       this.methodService = methodService;
       this.flavorService = flavorService;
+
       this.authService = authService;
       this.$httpBackend = $httpBackend;
 
@@ -55,6 +56,47 @@ describe('testing brew-buddy-frontend-app services', () => {
     this.originService.createOrigin(post)
     .then(res => {
       expect(res.status).toBe(200);
+      expect(Array.isArray(res.data)).toBe(true);
+    });
+  });
+  it('should update an origin', () => {
+    const authString = this.authService.getToken();
+    const put = {country: 'korea'};
+    const headers = {
+      'authorization': `Bearer ${authString}`,
+      'Accept':'application/json, text/plain, */*',
+      'Content-Type':'application/json;charset=utf-8'
+    };
+
+    this.$httpBackend.expectPUT(`${testUrl}/api/origin`, put, headers)
+    .respond(200, {status: 'ok', data:[
+      {country: 'korea'}
+    ]});
+
+
+    this.originService.updateOrigin(put)
+    .then(res => {
+      expect(res.status).toBe(200);
+      expect(Array.isArray(res.data)).toBe(true);
+    });
+  });
+
+  it('should delete an origin', () => {
+    const authString = this.authService.getToken();
+    const originId = this.originId;
+    const headers = {
+      'authorization': `Bearer ${authString}`,
+      'Accept':'application/json, text/plain, */*',
+      'Content-Type':'application/json;charset=utf-8'
+    };
+
+    this.$httpBackend.expectDELETE(`${testUrl}/api/origin`, originId, headers)
+    .respond(204, {status: 'no content'});
+
+
+    this.originService.deleteOrigin(originId)
+    .then(res => {
+      expect(res.status).toBe(204);
       expect(Array.isArray(res.data)).toBe(true);
     });
   });
@@ -105,6 +147,49 @@ describe('testing brew-buddy-frontend-app services', () => {
         expect(Array.isArray(res.data)).toBe(true);
       });
     });
+
+    it('should update an method', () => {
+      const authString = this.authService.getToken();
+      const put = {title: 'Java', recipe: '1 cup', brewRatio: 2, brewTimer: 22};
+      const headers = {
+        'authorization': `Bearer ${authString}`,
+        'Accept':'application/json, text/plain, */*',
+        'Content-Type':'application/json;charset=utf-8'
+      };
+
+      this.$httpBackend.expectPUT(`${testUrl}/api/method`, put, headers)
+      .respond(200, {status: 'ok', data:[
+      {title: 'Java', recipe: '1 cup', brewRatio: 2, brewTimer: 22}
+      ]});
+
+
+      this.methodService.updateMethod(put)
+      .then(res => {
+        expect(res.status).toBe(200);
+        expect(Array.isArray(res.data)).toBe(true);
+      });
+    });
+
+    it('should delete an method', () => {
+      const authString = this.authService.getToken();
+      const methodId = this.methodId;
+      const headers = {
+        'authorization': `Bearer ${authString}`,
+        'Accept':'application/json, text/plain, */*',
+        'Content-Type':'application/json;charset=utf-8'
+      };
+
+      this.$httpBackend.expectDELETE(`${testUrl}/api/method`, methodId, headers)
+      .respond(204, {status: 'no content'});
+
+
+      this.methodService.deleteMethod(methodId)
+      .then(res => {
+        expect(res.status).toBe(204);
+        expect(Array.isArray(res.data)).toBe(true);
+      });
+    });
+    
     describe('testing brew-buddy-frontend-app flavor-service', () => {
 
       it('should get some flavor', () => {
