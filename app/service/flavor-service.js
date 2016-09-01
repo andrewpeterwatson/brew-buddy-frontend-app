@@ -3,20 +3,25 @@
 
 const angular = require('angular');
 
-angular.module('brewBuddy').factory('flavorService', ['$log', '$q', '$http', flavorService]);
+angular.module('brewBuddy').factory('flavorService', ['$log', '$q', '$http', 'authService', flavorService]);
 
-function flavorService($log, $q, $http){
+function flavorService($log, $q, $http, authService){
   let service = {};
-
+  let token = authService.getToken();
   let url = `${__API_URL__}/api/flavor`;
 
   // add functionality to the service
   service.flavors = [];
 
   service.createFlavor = function(data){
+    if(!token) return $q.reject(new Error('not token process not allowed'));
     $log.debug('flavorService.createFlavor');
     return $q((resolve, reject) => {
-      $http.post( url , data )
+      $http.post( url , data , {
+        headers: {
+          authorization: `Bearer ${authService.getToken()}`
+        }
+      })
       .then( res  => {
         $log.log(`POST ${url}:${res.status} success!`);
         this.flavors.push(res.data);
@@ -30,12 +35,18 @@ function flavorService($log, $q, $http){
   };
 
   service.fetchFlavors = function(){
+    if(!token) return $q.reject(new Error('not token process not allowed'));
     $log.debug('flavorService.fetchFlavors');
     return $q((resolve, reject) => {
-      $http.get(url )
+      $http.get(url, {
+        headers: {
+          Authorization: `Bearer ${authService.getToken()}`
+        }
+      })
         .then( res => {
           $log.log(`GET ${url}:${res.status} success!`);
           this.flavors = res.data;
+          console.log('hitting', this.flavors);
           resolve(this.flavors);
         })
         .catch( err => {
@@ -46,9 +57,14 @@ function flavorService($log, $q, $http){
   };
 
   service.updateFlavor = function(data){
+    if(!token) return $q.reject(new Error('not token process not allowed'));
     $log.debug('flavorService.updateFlavor');
     return $q((resolve, reject) => {
-      $http.put(`${url}/${data._id}`, data )
+      $http.put(`${url}/${data._id}`, data , {
+        headers: {
+          authorization: `Bearer ${authService.getToken()}`
+        }
+      })
         .then( res => {
           $log.log(`GET ${url}:${res.status} success!`);
           this.flavors.forEach((flavor, index) => {
@@ -64,9 +80,14 @@ function flavorService($log, $q, $http){
   };
 
   service.deleteFlavor = function(flavorId){
+    if(!token) return $q.reject(new Error('not token process not allowed'));
     $log.debug('flavorService.deleteFlavor');
     return $q((resolve, reject) => {
-      $http.delete(`${url}/${flavorId}`)
+      $http.delete(`${url}/${flavorId}`, {
+        headers: {
+          authorization: `Bearer ${authService.getToken()}`
+        }
+      })
         .then((res) => {
           $log.log(`DELETE ${url}:${res.status} success!`);
           this.flavors.forEach((flavor, index) => {

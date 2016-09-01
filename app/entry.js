@@ -35,8 +35,8 @@ angular.module('brewBuddy', [ngRoute])
 // angular services
 require('./service/auth-service');
 require('./service/origin-service');
-// require('./service/method-service');
-// require('./service/flavor-service');
+require('./service/method-service');
+require('./service/flavor-service');
 // require('./service/entry-service');
 
 // angular controllers
