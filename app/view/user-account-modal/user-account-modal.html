@@ -1,0 +1,33 @@
+<div>
+  <form name="update-account-info-form" novalidate
+  class="form-inline"
+  ng-submit="userAccountModalCtrl.updateAccountInfo()">
+
+    <h2> Account Information </h2>
+    <p> For Username: {{ userAccountModalCtrl.user.username }} </p>
+
+    <label for="change-username"> Change Username: </label>
+    <input class="form-control" type="text" name="changeusername">
+
+    <h3> Change Password </h3>
+    <label for="current-password"> Current Password: </label>
+    <input type="password" name="currentpassword" class="form-control">
+
+    <label for="new-password"> New Password: </label>
+    <input type="password" name="new-password" class="form-control">
+
+    <label for="confirm-new-password"> Confirm New Password: </label>
+    <input type="password" name="confirmnewpassword" class="form-control">
+
+    <h3> Email </h3>
+    <p> Current Email Address: {{ userAccountModalCtrl.user.email }} </p>
+
+    <label for="new-email"> New Email Address: </label>
+    <input type="text" class="form-control" name="newemail">
+
+    <label for="confirm-email"> Confirm New Email: </label>
+    <input type="text" class="form-control" name="confirmemail">
+
+    <button type="submit"> Submit Changes </button>
+  </form>
+</div>
