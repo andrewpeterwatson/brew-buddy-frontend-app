@@ -4,7 +4,7 @@
 //
 // const angular = require('angular');
 //
-// angular.module('demoApp').factory('userService', ['$log', '$q', '$http', userService]);
+// angular.module('brewBuddy').factory('userService', ['$log', '$q', '$http', userService]);
 //
 // function userService($log, $q, $http){
 //   let service = {};

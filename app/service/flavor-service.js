@@ -3,7 +3,7 @@
 
 const angular = require('angular');
 
-angular.module('demoApp').factory('flavorService', ['$log', '$q', '$http', flavorService]);
+angular.module('brewBuddy').factory('flavorService', ['$log', '$q', '$http', flavorService]);
 
 function flavorService($log, $q, $http){
   let service = {};

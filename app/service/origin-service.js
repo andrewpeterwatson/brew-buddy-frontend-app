@@ -3,20 +3,25 @@
 
 const angular = require('angular');
 
-angular.module('demoApp').factory('originService', ['$log', '$q', '$http', originService]);
+angular.module('brewBuddy').factory('originService', ['$log', '$q', '$http', 'authService', originService]);
 
-function originService($log, $q, $http){
+function originService($log, $q, $http, authService){
   let service = {};
-
+  let token = authService.getToken();
   let url = `${__API_URL__}/api/origin`;
 
   // add functionality to the service
   service.origins = [];
 
   service.createOrigin = function(data){
+    if(!token) return $q.reject(new Error('not token process not allowed'));
     $log.debug('originService.createOrigin');
     return $q((resolve, reject) => {
-      $http.post( url , data )
+      $http.post( url , data , {
+        headers: {
+          authorization: `Bearer ${authService.getToken()}`
+        }
+      })
       .then( res  => {
         $log.log(`POST ${url}:${res.status} success!`);
         this.origins.push(res.data);
@@ -30,12 +35,18 @@ function originService($log, $q, $http){
   };
 
   service.fetchOrigins = function(){
+    if(!token) return $q.reject(new Error('not token process not allowed'));
     $log.debug('originService.fetchOrigins');
     return $q((resolve, reject) => {
-      $http.get(url )
+      $http.get(url, {
+        headers: {
+          Authorization: `Bearer ${authService.getToken()}`
+        }
+      })
         .then( res => {
           $log.log(`GET ${url}:${res.status} success!`);
           this.origins = res.data;
+          console.log('hitting', this.origins);
           resolve(this.origins);
         })
         .catch( err => {
@@ -46,9 +57,14 @@ function originService($log, $q, $http){
   };
 
   service.updateOrigin = function(data){
+    if(!token) return $q.reject(new Error('not token process not allowed'));
     $log.debug('originService.updateOrigin');
     return $q((resolve, reject) => {
-      $http.put(`${url}/${data._id}`, data )
+      $http.put(`${url}/${data._id}`, data , {
+        headers: {
+          authorization: `Bearer ${authService.getToken()}`
+        }
+      })
         .then( res => {
           $log.log(`GET ${url}:${res.status} success!`);
           this.origins.forEach((origin, index) => {
@@ -64,9 +80,14 @@ function originService($log, $q, $http){
   };
 
   service.deleteOrigin = function(originId){
+    if(!token) return $q.reject(new Error('not token process not allowed'));
     $log.debug('originService.deleteOrigin');
     return $q((resolve, reject) => {
-      $http.delete(`${url}/${originId}`)
+      $http.delete(`${url}/${originId}`, {
+        headers: {
+          authorization: `Bearer ${authService.getToken()}`
+        }
+      })
         .then((res) => {
           $log.log(`DELETE ${url}:${res.status} success!`);
           this.origins.forEach((origin, index) => {
