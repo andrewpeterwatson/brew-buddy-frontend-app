@@ -1,5 +1,6 @@
 // Karma configuration
-// Generated on Sun Aug 28 2016 12:20:46 GMT-0700 (PDT)
+
+// Generated on Wed Aug 31 2016 18:41:09 GMT-0700 (PDT)
 
 const webpackConfig = require('./webpack.config');
 webpackConfig.entry = {};
@@ -36,7 +37,6 @@ module.exports = function(config) {
       'app/entry.js': ['webpack'],
       'test/*-test.js': ['babel']
     },
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
