@@ -1,6 +1,6 @@
 'use strict';
 
-require('./app-flavor-page.scss');
+require('./app-flavor.scss');
 
 const angular = require('angular');
 
@@ -8,7 +8,7 @@ angular.module('demoApp').directive('appFlavor', function() {
   return {
     restrict: 'E',
     replace: true,
-    template: require('./app-flavor-page.html'),
+    template: require('./app-flavor.html'),
     controller: ['flavorService',AppFlavorController],
     controllerAs: 'flavorCtrl',
     bindToController: true,
