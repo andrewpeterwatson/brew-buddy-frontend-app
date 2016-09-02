@@ -22,6 +22,7 @@ function SigninController($log, $location, authService){
     .then( token => {
       $log.info('token', token);
       $location.path('/home');
+      
     })
     .catch( err => {
       $log.error(err);
