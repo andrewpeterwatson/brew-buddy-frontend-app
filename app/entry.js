@@ -37,7 +37,7 @@ require('./service/auth-service');
 require('./service/origin-service');
 require('./service/method-service');
 require('./service/flavor-service');
-// require('./service/entry-service');
+require('./service/entry-service');
 
 // angular controllers
 require('./view/signup');
