@@ -41,6 +41,9 @@ function authService( $log, $q, $http, $window){
         'Accept': 'application/json'
       }
     };
+
+    console.log('signup user', user);
+
     return $http.post(url, user, config)
     .then( res => {
       $log.info('success', res.data);
