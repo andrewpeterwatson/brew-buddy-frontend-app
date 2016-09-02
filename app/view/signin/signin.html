@@ -1,4 +1,4 @@
-<main class="app-signin" ng-init="signinCtrl.getToken()">
+<main ng-controller="SigninController as signinCtrl" class="app-signin" ng-init="signinCtrl.getToken()">
   <form novalidate ng-submit="signinCtrl.signin()" name="signinForm">
     <section class="form-group">
       <label for="username"> Username: </label>

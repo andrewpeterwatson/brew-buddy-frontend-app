@@ -8,9 +8,6 @@ require('./scss/base.scss');
 const angular = require('angular');
 const ngRoute = require('angular-route');
 
-// require('./component/app-home');
-require('./component/app-nav');
-
 
 // angular modules
 angular.module('brewBuddy', [ngRoute])
@@ -37,14 +34,14 @@ angular.module('brewBuddy', [ngRoute])
 }]);
 
 // angular services
-require('./service/auth-service');
-require('./service/origin-service');
-require('./service/method-service');
-require('./service/flavor-service');
-require('./service/entry-service');
+// require('./service/auth-service');
+// require('./service/origin-service');
+// require('./service/method-service');
+// require('./service/flavor-service');
+// require('./service/entry-service');
 
 // angular controllers
-require('./view/signup');
-require('./view/signin');
-require('./view/home');
+// require('./view/signup');
+// require('./view/signin');
+// require('./view/home');
 // require('./component/app-nav');
