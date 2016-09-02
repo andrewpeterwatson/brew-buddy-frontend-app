@@ -11,10 +11,10 @@ angular.module('demoApp').directive('appMain', function(){
     controller: [MainController],
     controllerAs: 'mainCtrl',
     bindToController: true,
-    scope: {}
-  };
+    scope: {},
+  }
 });
 
 function MainController(){
   this.example = 'hello world';
-}
+};
