@@ -11,6 +11,9 @@ const angular = require('angular');
 angular.module('demoApp', []);
 
 // angular services
-
+require('./service/app-flavor-service');
 // angular components
 require('./component/main');
+require('./component/app-flavor-page');
+require('./component/app-base-flavors');
+require('./component/app-flavor-fruits-floralsSVG');
