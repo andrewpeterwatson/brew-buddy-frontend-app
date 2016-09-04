@@ -7,7 +7,10 @@ angular.module('brewBuddy')
 
 function CountryOfOriginController($log, $location, originService) {
 
-  this.brewForm = {};
+  this.brewForm = {
+    origin: null,
+    brewMethod: null
+  };
   // this.origins = {};
 
   // this.fetchOrigins = function() {
@@ -17,8 +20,13 @@ function CountryOfOriginController($log, $location, originService) {
     });
   // };
 
-  this.submitOrigin = function() {
-    const originValue = document.getElementById('ctyoforigin').value;
+  this.logOrigin = function() {
+    console.log('origin selected', this.origins);
+  };
 
+  this.submitOrigin = function() {
+    console.log(this.origins);
+    const originValue = document.getElementById('ctyoforigin').value;
+    this.brewForm.origin = originValue;
   }
 }
