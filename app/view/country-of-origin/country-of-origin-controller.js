@@ -13,20 +13,18 @@ function CountryOfOriginController($log, $location, originService) {
   };
   // this.origins = {};
 
-  // this.fetchOrigins = function() {
-    originService.fetchAllOrigins()
-    .then( (origins) => {
-      this.origins = origins;
-    });
-  // };
-
-  this.logOrigin = function() {
-    console.log('origin selected', this.origins);
-  };
+  originService.fetchAllOrigins()
+  .then( (origins) => {
+    this.origins = origins;
+  });
 
   this.submitOrigin = function() {
     console.log(this.origins);
-    const originValue = document.getElementById('ctyoforigin').value;
-    this.brewForm.origin = originValue;
-  }
+    this.brewForm.origin = this.origins;
+    $location.path('/user/method');
+  };
+
+  this.dropdownSelector = function(origin) {
+    console.log('selector function:', origin);
+  };
 }
