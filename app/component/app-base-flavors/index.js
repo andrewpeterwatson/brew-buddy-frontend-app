@@ -4,7 +4,7 @@ require('./base-flavors.scss');
 
 const angular = require('angular');
 
-angular.module('demoApp').directive('baseFlavors', function() {
+angular.module('brewBuddy').directive('baseFlavors', function() {
   return {
     restrict: 'E',
     template: require('./base-flavors.html'),
@@ -16,5 +16,5 @@ angular.module('demoApp').directive('baseFlavors', function() {
 
   function BaseFlavorsController(flavorService) {
 
-    
+
 });

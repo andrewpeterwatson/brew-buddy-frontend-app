@@ -3,7 +3,7 @@ require('./main.scss');
 
 const angular = require('angular');
 
-angular.module('demoApp').directive('appMain', function(){
+angular.module('brewBuddy').directive('appMain', function(){
   return {
     restrict: 'E',
     replace: true,

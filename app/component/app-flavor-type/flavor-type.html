@@ -1,0 +1,10 @@
+<li class="app-flavor-type">
+  <button type="button" ng-click="typeCtrl.callFlavor(typeCtrl.fruitsFloralsData, fruitsFloralsData)">fruits and florals</button>
+  <button type="button" ng-click="typeCtrl.callFlavor(typeCtrl.sugarSpiceData, sugarSpiceData)">sugars and spices</button>
+  <button type="button" ng-click="typeCtrl.callFlavor(typeCtrl.otherData, otherData)">other</button>
+
+  <h1>Flavor Catagory {{typeCtrl.flavorCatSelected}}</h1>
+  <li ng-repeat="type in typeCtrl.flavorTypes"><button type="button" ng-click="typeCtrl.fetchFlavorType(typeCtrl.fruitsFloralsData)">{{type}}</button></li>
+
+  <li ng-repeat="title in typeCtrl.currentCatSelection"><button type="button" name="button">{{title}}</button></li>
+</li>
