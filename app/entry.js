@@ -31,7 +31,7 @@ angular.module('brewBuddy', [ngRoute])
     template: require('./view/user/user.html')
   })
   // .when('/user/account', {
-  // 
+  //
   //   template: require('./view/user-account-modal/user-account-modal.html'),
   //   controller: 'UserAccountModalController',
   //   controllerAs: 'userAccountModalCtrl'
@@ -52,6 +52,7 @@ require('./service/origin-service');
 require('./service/method-service');
 require('./service/flavor-service');
 require('./service/entry-service');
+require('./service/user-selections-service');
 
 // angular controllers
 require('./view/country-of-origin/country-of-origin-controller.js');
