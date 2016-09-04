@@ -11,13 +11,14 @@ function CountryOfOriginController($log, $location, originService) {
   // this.origins = {};
 
   // this.fetchOrigins = function() {
-    originService.fetchOrigins()
+    originService.fetchAllOrigins()
     .then( (origins) => {
       this.origins = origins;
     });
   // };
 
   this.submitOrigin = function() {
+    const originValue = document.getElementById('ctyoforigin').value;
 
   }
 }
