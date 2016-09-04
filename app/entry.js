@@ -31,6 +31,7 @@ angular.module('brewBuddy', [ngRoute])
     template: require('./view/user/user.html')
   })
   // .when('/user/account', {
+  // 
   //   template: require('./view/user-account-modal/user-account-modal.html'),
   //   controller: 'UserAccountModalController',
   //   controllerAs: 'userAccountModalCtrl'
