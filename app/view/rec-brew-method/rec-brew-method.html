@@ -1,0 +1,14 @@
+<div>
+  <h2> Origin: {{ recBrewMethodCtrl.brew.origin }} </h2>
+  <form novalidate name="recBrewMethodForm" ng-submit="recBrewMethodCtrl.submitRecBrewMethod()">
+
+  <label for="recMethod"> Recommended Brew Method: </label>
+  <select name="recMethod" ng-model="brew.method">
+    <option ng-repeat="method in brew.methods" value="{{ method }}">
+      {{ method }}
+  </select>
+</form>
+
+<button type="submit"> Brew! </button>
+
+</div>

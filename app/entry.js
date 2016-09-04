@@ -27,6 +27,19 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'HomeController',
     controllerAs: 'homeCtrl'
   })
+  .when('/user', {
+    template: require('./view/user/user.html')
+  })
+  .when('/user/account', {
+    template: require('./view/user-account-modal/user-account-modal.html'),
+    controller: 'UserAccountModalController',
+    controllerAs: 'userAccountModalCtrl'
+  })
+  .when('/user/countryoforigin', {
+    template: require('./view/country-of-origin/country-of-origin.html'),
+    controller: 'CountryOfOriginController',
+    controllerAs: 'countryOfOriginCtrl'
+  })
   .otherwise({
     redirectTo: '/signin'
   });
@@ -40,6 +53,7 @@ require('./service/flavor-service');
 require('./service/entry-service');
 
 // angular controllers
+require('./view/country-of-origin/country-of-origin-controller.js');
 require('./view/signup');
 require('./view/signin');
 require('./view/home');
