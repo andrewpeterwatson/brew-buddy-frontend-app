@@ -7,7 +7,7 @@ angular.module('brewBuddy').factory('flavorService',[
   flavorService
 ]);
 
-function flavorService($rootScope){
+function flavorService(){
   let service = {};
 
 
@@ -19,58 +19,28 @@ function flavorService($rootScope){
   service.flavorTypes = [];
   service.flavorTitles = [];
 
-  service.flavorCatSelected = '';
-
   service.fetchFlavorType = function(typeData, dataCat){
-    // $rootScope.$apply(() => {
     service.flavorCatSelected = dataCat;
+    service.flavorTypes = [];
     angular.forEach(typeData, (type) => {
       if (!service.flavorTypes.includes(type.flavorType)) {
         service.flavorTypes.push(type.flavorType);
       }
     });
-    // });
-    console.log('flavor types', service.flavorTypes);
   };
+
+  service.fetchFlavorTitle = function(dataArr, selectedType){
+    service.flavorTitles = [];
+    this.idx = 0;
+    angular.forEach(dataArr, (type) => {
+      this.idx++;
+      if (type.flavorType === selectedType) {
+        console.log('dataArr at selectedType', dataArr[this.idx - 1].title);
+        this.flavorTitles.push(dataArr[this.idx - 1].title);
+      }
+    });
+    console.log('flavorTitles', service.flavorTitles);
+  };
+
   return service;
-
-  // service.fetchFlavorTitle = function(titleData){
-  //   service.flavorTitles = [];
-  //   angular.forEach(titleData, (type) => {
-  //     if (!service.flavorTitles.includes(type.title)) {
-  //       service.flavorTitles.push(type.title);
-  //     }
-  //   });
-  //   console.log('flavor titles', this.flavorTitles);
-  // };
-
 }
-
-
-  // service.baseFlavors = ['fruitsFlorals','sugarSpice','other', 'vanilla'];
-  // service.baseFlavor = true;
-  // service.fruitsFloralsSVG = false;
-  //
-  //
-  // service.currentBaseSelection = function(baseFlavor){
-  //   $rootScope.$apply(() => {
-  //
-  //     angular.forEach(service.baseFlavors, function(baseFlavors){
-  //
-  //       service.baseFlavor = false;
-  //       if (baseFlavor === 'vanilla') {
-  //         service.baseFlavor = true;
-  //         console.log('vanilla', service.baseFlavor);
-  //       }
-  //       if(baseFlavor === baseFlavors) {
-  //         service[(baseFlavor + 'SVG')] = true;
-  //         console.log('this is base', service[baseFlavors]);
-  //       }
-  //     });
-  //
-  //     service.currentBase = baseFlavor;
-  //   });
-  // };
-  // return service;
-
-// }
