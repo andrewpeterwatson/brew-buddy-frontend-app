@@ -30,16 +30,15 @@ angular.module('brewBuddy', [ngRoute])
   .when('/user', {
     template: require('./view/user/user.html')
   })
-  // .when('/user/account', {
-  //
-  //   template: require('./view/user-account-modal/user-account-modal.html'),
-  //   controller: 'UserAccountModalController',
-  //   controllerAs: 'userAccountModalCtrl'
-  // })
   .when('/user/countryoforigin', {
     template: require('./view/country-of-origin/country-of-origin.html'),
     controller: 'CountryOfOriginController',
     controllerAs: 'countryOfOriginCtrl'
+  })
+  .when('./user/method', {
+    template: require('./view/rec-brew-method/rec-brew-method.html'),
+    controller: 'RecBrewMethodController',
+    controllerAs: 'recBrewMethodCtrl'
   })
   .otherwise({
     redirectTo: '/signin'

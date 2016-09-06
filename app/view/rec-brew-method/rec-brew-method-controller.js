@@ -3,9 +3,9 @@
 const angular = require('angular');
 
 angular.module('brewBuddy')
-.controller('RecBrewMethodController', ['$log', '$location', 'methodService', RecBrewMethodController]);
+.controller('RecBrewMethodController', ['$log', '$location', 'methodService', 'userSelectionsService', RecBrewMethodController]);
 
-function RecBrewMethodController($log, $location, methodService) {
+function RecBrewMethodController($log, $location, methodService, userSelectionsService) {
 
   this.methods = {};
 
@@ -19,7 +19,8 @@ function RecBrewMethodController($log, $location, methodService) {
 
   this.submitRecBrewMethod = function() {
     $log.debug('RecBrewMethodController.submitRecBrewMethod');
-
+    userSelectionsService.updateBrewMethod();
+    console.log('user select service brewMethod', userSelectionsService);
     $location.path('../recipe');
   };
 }

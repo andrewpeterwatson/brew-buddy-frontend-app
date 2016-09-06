@@ -14,7 +14,6 @@ function CountryOfOriginController($log, $location, originService, userSelection
 
   this.submitOrigin = function(origin) {
     userSelectionsService.updateOrigin(origin);
-    console.log('userSelectionsService', userSelectionsService);
     $location.path('/user/method');
   };
 
