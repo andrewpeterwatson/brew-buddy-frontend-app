@@ -1,0 +1,11 @@
+<div class="pastBrews">
+
+  <h1> Past Brews </h1>
+
+  <ol>
+    <li ng-repeat="pastbrew in pastBrewsCtrl.fetchPastBrews()">
+      {{ pastbrew.date }}
+    </li>
+  </ol>
+
+</div>
