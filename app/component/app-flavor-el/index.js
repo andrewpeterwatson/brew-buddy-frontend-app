@@ -15,9 +15,9 @@ angular.module('brewBuddy').directive('appFlavorEl', function() {
   function FlavorElementsController(flavorService){
 
 
-    this.fruitsFloralsData = require('json!../../assets/mock-data/flavor-fruitsAndFloral-data.json');
-    this.sugarSpiceData = require('json!../../assets/mock-data/flavor-sugarsAndSpice-data.json');
-    this.otherData = require('json!../../assets/mock-data/flavor-other-data.json');
+    this.fruitsFloralsData = require('json!../../assets/flavor-data/flavor-fruitsAndFloral-data.json');
+    this.sugarSpiceData = require('json!../../assets/flavor-data/flavor-sugarsAndSpice-data.json');
+    this.otherData = require('json!../../assets/flavor-data/flavor-other-data.json');
 
     this.flavorPath = 0;
     this.userFlavors = [];
@@ -61,6 +61,10 @@ angular.module('brewBuddy').directive('appFlavorEl', function() {
       this.currentFlavorTitles = flavorService.flavorTitles;
     };
     this.selectFlavor = function(title){
+      if (this.userFlavors.includes(title)) {
+        console.log('already used');
+        return;
+      }
       this.flavorSelected;
       this.flavorSelected = title;
       this.userFlavors.push(title);
