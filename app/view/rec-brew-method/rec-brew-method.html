@@ -2,14 +2,15 @@
 
   <form novalidate name="recBrewMethodForm" ng-submit="recBrewMethodCtrl.submitRecBrewMethod(selected)">
 
-  <label for="recMethod"> Recommended Brew Method for {{ userSelectionsService.userSelections.origin }}: </label>
+  <label for="recMethod"> Brew Method: </label>
 
   <select name="recMethod" ng-model="selected">
-    <option ng-repeat="method in recBrewMethodCtrl.methods" value="{{ method }}">
+    <option ng-repeat="method in recBrewMethodCtrl.methods track by $index" value="{{ method }}">
       {{ method }}
   </select>
-</form>
 
-<button type="submit"> Brew! </button>
+  <button type="submit"> Brew! </button>
+
+</form>
 
 </div>

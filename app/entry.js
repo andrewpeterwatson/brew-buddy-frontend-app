@@ -35,7 +35,7 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'CountryOfOriginController',
     controllerAs: 'countryOfOriginCtrl'
   })
-  .when('./user/method', {
+  .when('/user/method', {
     template: require('./view/rec-brew-method/rec-brew-method.html'),
     controller: 'RecBrewMethodController',
     controllerAs: 'recBrewMethodCtrl'
@@ -55,6 +55,7 @@ require('./service/user-selections-service');
 
 // angular controllers
 require('./view/country-of-origin/country-of-origin-controller.js');
+require('./view/rec-brew-method/rec-brew-method-controller.js');
 require('./view/signup');
 require('./view/signin');
 require('./view/home');
