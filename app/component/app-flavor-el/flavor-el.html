@@ -1,0 +1,17 @@
+<li class="app-flavor-el">
+  <h1>tastes like: <li ng-repeat="titles in flavorElCtrl.userFlavors">{{titles}}</li></h1>
+  <button ng-show="flavorElCtrl.flavorCatView" type="button" ng-click="flavorElCtrl.callFlavor(flavorElCtrl.fruitsFloralsData, fruitsFloralsData)">fruits and florals</button>
+  <button ng-show="flavorElCtrl.flavorCatView" type="button" ng-click="flavorElCtrl.callFlavor(flavorElCtrl.sugarSpiceData, sugarSpiceData)">sugars and spices</button>
+  <button ng-show="flavorElCtrl.flavorCatView" type="button" ng-click="flavorElCtrl.callFlavor(flavorElCtrl.otherData, otherData)">other</button>
+
+
+
+
+  <li ng-show="flavorElCtrl.flavorTypeView" ng-repeat="type in flavorElCtrl.currentCatSelection"><button type="button" ng-click="flavorElCtrl.callTitle(type)" value="type">{{type}}</button></li>
+
+<li ng-show="flavorElCtrl.flavorSelectionsView" ng-repeat="title in flavorElCtrl.currentFlavorTitles"><h3><button type="button" ng-click="flavorElCtrl.selectFlavor(title)">{{title}}</button></h3></li>
+
+<button ng-show="flavorElCtrl.backButtonView" type="button" ng-click="flavorElCtrl.backButton()">back</button>
+<button ng-show="flavorElCtrl.anotherFlavorView" type="button" ng-click="flavorElCtrl.anotherFlavor()">another flavor</button>
+<button ng-show="flavorElCtrl.flavorChosen" type="button" ng-click="flavorElCtrl.nextPage()">next page</button>
+</li>

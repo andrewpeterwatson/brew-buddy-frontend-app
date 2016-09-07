@@ -2,8 +2,8 @@
 
 const angular = require('angular');
 
-angular.module('brewBuddy').controller('FlavorController', ['$location', FlavorController]);
+angular.module('brewBuddy').controller('FlavorPageController', ['$location', FlavorPageController]);
 
-function FlavorController($location){
-  
+function FlavorPageController($location){
+
 }

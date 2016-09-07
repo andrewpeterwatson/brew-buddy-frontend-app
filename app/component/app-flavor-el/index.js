@@ -1,18 +1,18 @@
 'use strict';
 
-require('./flavor-type.scss');
+require('./flavor-el.scss');
 const angular = require('angular');
 
-angular.module('brewBuddy').directive('appFlavorType', function() {
+angular.module('brewBuddy').directive('appFlavorEl', function() {
   return {
     restrict: 'E',
-    template: require('./flavor-type.html'),
-    controller: ['flavorService',FlavorTypeController],
-    controllerAs: 'typeCtrl',
+    template: require('./flavor-el.html'),
+    controller: ['flavorService',FlavorElementsController],
+    controllerAs: 'flavorElCtrl',
     scope: {}
   };
 
-  function FlavorTypeController(flavorService){
+  function FlavorElementsController(flavorService){
 
 
     this.fruitsFloralsData = require('json!../../assets/mock-data/flavor-fruitsAndFloral-data.json');
@@ -20,6 +20,7 @@ angular.module('brewBuddy').directive('appFlavorType', function() {
     this.otherData = require('json!../../assets/mock-data/flavor-other-data.json');
 
     this.flavorPath = 0;
+    this.userFlavors = [];
     this.currentCatSelection = [];
     this.currentFlavorTitles = [];
     this.currentCatData;
@@ -29,11 +30,15 @@ angular.module('brewBuddy').directive('appFlavorType', function() {
     this.flavorTypeView = false;
     this.flavorTitleView = false;
     this.flavorSelectionsView = false;
+    this.backButtonView = false;
+    this.flavorChosen = false;
+    this.anotherFlavorView = false;
 
 
     this.callFlavor = function(typeData, dataCat){
       this.flavorPath++;
       this.currentTitleSelection;
+      this.backButtonView = true;
       this.flavorCatView = false;
       this.flavorTypeView = false;
       this.flavorTitleView = false;
@@ -47,6 +52,7 @@ angular.module('brewBuddy').directive('appFlavorType', function() {
     this.callTitle = function(title){
       this.flavorPath++;
       this.flavorTypeView = false;
+      this.backButtonView = true;
       this.flavorSelectionsView = true;
       this.currentFlavorTitles;
       this.flavorSelected;
@@ -57,9 +63,22 @@ angular.module('brewBuddy').directive('appFlavorType', function() {
     this.selectFlavor = function(title){
       this.flavorSelected;
       this.flavorSelected = title;
+      this.userFlavors.push(title);
+      this.flavorChosen = true;
+      this.anotherFlavorView = true;
+      this.backButtonView = false;
+      this.flavorSelectionsView = false;
+      this.flavorPath = 0;
+      if (this.userFlavors.length === 3) {
+        this.flavorCatView = false;
+        this.flavorTypeView = false;
+        this.flavorTitleView = false;
+        this.flavorSelectionsView = false;
+        this.anotherFlavorView = false;
+        this.backButtonView = false;
+      }
     };
     this.backButton = function(){
-      console.log('path count', this.flavorPath);
       if (this.flavorPath === 2) {
         this.flavorSelectionsView = false;
         this.flavorTitleView = false;
@@ -70,9 +89,19 @@ angular.module('brewBuddy').directive('appFlavorType', function() {
       if (this.flavorPath === 1) {
         this.flavorCatView = true;
         this.flavorTypeView = false;
+        this.backButtonView = false;
         this.flavorPath--;
         return;
       }
+    };
+    this.anotherFlavor = function(){
+      this.flavorCatView = true;
+      this.flavorTypeView = false;
+      this.flavorTitleView = false;
+      this.flavorSelectionsView = false;
+      this.backButtonView = false;
+      this.flavorChosen = false;
+      this.anotherFlavorView = false;
     };
   }
 });

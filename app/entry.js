@@ -29,8 +29,8 @@ angular.module('brewBuddy', [ngRoute])
   })
   .when('/flavor', {
     template: require('./view/flavor/flavor.html'),
-    controller: 'FlavorController',
-    controllerAs: 'flavCtrl'
+    controller: 'FlavorPageController',
+    controllerAs: 'flavPageCtrl'
   })
   .otherwise({
     redirectTo: '/signin'
@@ -40,7 +40,7 @@ angular.module('brewBuddy', [ngRoute])
 // angular services
 // angular components
 require('./component/app-flavor');
-require('./component/app-flavor-type');
+require('./component/app-flavor-el');
 
 require('./service/auth-service');
 require('./service/origin-service');
