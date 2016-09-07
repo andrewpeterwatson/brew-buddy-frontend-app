@@ -46,14 +46,6 @@ angular.module('brewBuddy', [ngRoute])
 }]);
 
 // angular services
-<<<<<<< HEAD
-require('./service/app-flavor-service');
-// angular components
-require('./component/main');
-require('./component/app-flavor-page');
-require('./component/app-base-flavors');
-require('./component/app-flavor-fruits-floralsSVG');
-=======
 require('./service/auth-service');
 require('./service/origin-service');
 require('./service/method-service');
@@ -67,4 +59,3 @@ require('./view/rec-brew-method/rec-brew-method-controller.js');
 require('./view/signup');
 require('./view/signin');
 require('./view/home');
->>>>>>> f9ed7a2f93250ebd0e70d19daa1e787f8763a354
