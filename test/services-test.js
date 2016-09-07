@@ -5,9 +5,9 @@ const testUrl = 'http://localhost:3000';
 describe('testing brew-buddy-frontend-app services', function() {
   beforeEach(() => {
     angular.mock.module('brewBuddy');
-    angular.mock.inject((originService, methodService, flavorService, entryService, authService, $httpBackend) => {
+    angular.mock.inject((originService, brewMethodService, flavorService, entryService, authService, $httpBackend) => {
       this.originService = originService;
-      this.methodService = methodService;
+      this.brewMethodService = brewMethodService;
       this.flavorService = flavorService;
       this.entryService = entryService;
       this.authService = authService;
@@ -33,7 +33,7 @@ describe('testing brew-buddy-frontend-app services', function() {
         }]
       });
 
-    this.originService.fetchOrigins()
+    this.originService.fetchAllOrigins()
       .then(res => {
         expect(res.status).toBe(200);
         expect(Array.isArray(res.data)).toBe(true);
@@ -96,7 +96,6 @@ describe('testing brew-buddy-frontend-app services', function() {
         expect(Array.isArray(res.data)).toBe(true);
       });
   });
-
   it('should delete an origin', () => {
     const authString = this.authService.getToken();
     const originId = this.originId;
@@ -119,9 +118,10 @@ describe('testing brew-buddy-frontend-app services', function() {
       });
   });
 
-  describe('testing brew-buddy-frontend-app method-service', () => {
 
-    it('should get some method', () => {
+  describe('testing brew-buddy-frontend-app brew-method-service', () => {
+
+    it('should get some brewMethod', () => {
       const authString = this.authService.getToken();
       const headers = {
         'authorization': `Bearer ${authString}`,
@@ -129,7 +129,7 @@ describe('testing brew-buddy-frontend-app services', function() {
 
       };
 
-      this.$httpBackend.expectGET(`${testUrl}/api/method`, headers)
+      this.$httpBackend.expectGET(`${testUrl}/api/brew-method`, headers)
         .respond(200, {
           status: 'ok',
           data: [{
@@ -145,14 +145,14 @@ describe('testing brew-buddy-frontend-app services', function() {
           }]
         });
 
-      this.methodService.fetchMethods()
+      this.brewMethodService.fetchAllBrewMethods()
         .then(res => {
           expect(res.status).toBe(200);
           expect(Array.isArray(res.data)).toBe(true);
         });
     });
 
-    it('should post an method', () => {
+    it('should post an brewMethod', () => {
       const authString = this.authService.getToken();
       const post = {
         title: 'korean coffee',
@@ -166,7 +166,7 @@ describe('testing brew-buddy-frontend-app services', function() {
         'Content-Type': 'application/json;charset=utf-8'
       };
 
-      this.$httpBackend.expectPOST(`${testUrl}/api/method`, post, headers)
+      this.$httpBackend.expectPOST(`${testUrl}/api/brew-method`, post, headers)
         .respond(200, {
           status: 'ok',
           data: [{
@@ -188,14 +188,14 @@ describe('testing brew-buddy-frontend-app services', function() {
         });
 
 
-      this.methodService.createMethod(post)
+      this.brewMethodService.createBrewMethod(post)
         .then(res => {
           expect(res.status).toBe(200);
           expect(Array.isArray(res.data)).toBe(true);
         });
     });
 
-    it('should update an method', () => {
+    it('should update an brewMethod', () => {
       const authString = this.authService.getToken();
       const put = {
         title: 'Java',
@@ -209,7 +209,7 @@ describe('testing brew-buddy-frontend-app services', function() {
         'Content-Type': 'application/json;charset=utf-8'
       };
 
-      this.$httpBackend.expectPUT(`${testUrl}/api/method`, put, headers)
+      this.$httpBackend.expectPUT(`${testUrl}/api/brew-method`, put, headers)
         .respond(200, {
           status: 'ok',
           data: [{
@@ -221,29 +221,29 @@ describe('testing brew-buddy-frontend-app services', function() {
         });
 
 
-      this.methodService.updateMethod(put)
+      this.brewMethodService.updateBrewMethod(put)
         .then(res => {
           expect(res.status).toBe(200);
           expect(Array.isArray(res.data)).toBe(true);
         });
     });
 
-    it('should delete an method', () => {
+    it('should delete an brewMethod', () => {
       const authString = this.authService.getToken();
-      const methodId = this.methodId;
+      const brewMethodId = this.brewMethodId;
       const headers = {
         'authorization': `Bearer ${authString}`,
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json;charset=utf-8'
       };
 
-      this.$httpBackend.expectDELETE(`${testUrl}/api/method`, methodId, headers)
+      this.$httpBackend.expectDELETE(`${testUrl}/api/brew-method`, brewMethodId, headers)
         .respond(204, {
           status: 'no content'
         });
 
 
-      this.methodService.deleteMethod(methodId)
+      this.brewMethodService.deleteBrewMethod(brewMethodId)
         .then(res => {
           expect(res.status).toBe(204);
           expect(Array.isArray(res.data)).toBe(true);
@@ -274,7 +274,7 @@ describe('testing brew-buddy-frontend-app services', function() {
             }]
           });
 
-        this.flavorService.fetchFlavors()
+        this.flavorService.fetchAllFlavors()
           .then(res => {
             expect(res.status).toBe(200);
             expect(Array.isArray(res.data)).toBe(true);
@@ -409,7 +409,7 @@ describe('testing brew-buddy-frontend-app services', function() {
               }]
             });
 
-          this.entryService.fetchEntry()
+          this.entryService.fetchAllEntries()
             .then(res => {
               expect(res.status).toBe(200);
               expect(Array.isArray(res.data)).toBe(true);

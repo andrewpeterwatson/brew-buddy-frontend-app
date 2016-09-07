@@ -34,11 +34,11 @@ function entryService($log, $q, $http, authService){
     });
   };
 
-  service.fetchEntry = function(){
+  service.fetchAllEntries = function(){
     if(!token) return $q.reject(new Error('not token process not allowed'));
-    $log.debug('entryService.fetchEntries');
+    $log.debug('entryService.fetchAllEntries');
     return $q((resolve, reject) => {
-      $http.get(url, {
+      $http.get(`${url}/all`, {
         headers: {
           Authorization: `Bearer ${authService.getToken()}`
         }
