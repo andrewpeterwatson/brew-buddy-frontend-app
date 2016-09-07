@@ -40,17 +40,26 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'RecBrewMethodController',
     controllerAs: 'recBrewMethodCtrl'
   })
+  .when('/user/flavor', {
+    template: require('./view/flavor/flavor.html'),
+    controller: 'FlavorPageController',
+    controllerAs: 'flavPageCtrl'
+  })
   .otherwise({
     redirectTo: '/signin'
   });
 }]);
 
 // angular services
+// angular components
+require('./component/app-flavor-el');
+
 require('./service/auth-service');
 require('./service/origin-service');
 require('./service/method-service');
 require('./service/flavor-service');
 require('./service/entry-service');
+require('./service/app-flavor-service');
 require('./service/user-selections-service');
 
 // angular controllers
@@ -59,3 +68,4 @@ require('./view/rec-brew-method/rec-brew-method-controller.js');
 require('./view/signup');
 require('./view/signin');
 require('./view/home');
+require('./view/flavor');
