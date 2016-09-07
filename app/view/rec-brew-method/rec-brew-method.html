@@ -5,7 +5,7 @@
   <label for="recMethod"> Brew Method: </label>
 
   <select name="recMethod" ng-model="selected">
-    <option ng-repeat="method in recBrewMethodCtrl.methods track by $index" value="{{ method }}">
+    <option ng-repeat="method in recBrewMethodCtrl.brewMethods track by $index" value="{{ method }}">
       {{ method }}
   </select>
 
