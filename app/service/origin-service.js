@@ -34,25 +34,34 @@ function originService($log, $q, $http, authService){
     });
   };
 
-  service.fetchOrigins = function(){
+  service.fetchAllOrigins = function(){
     if(!token) return $q.reject(new Error('not token process not allowed'));
     $log.debug('originService.fetchOrigins');
+    // $log.warn('old token: ', `Bearer ${authService.getToken()}`);
+
     return $q((resolve, reject) => {
-      $http.get(url, {
-        headers: {
-          Authorization: `Bearer ${authService.getToken()}`
-        }
-      })
-        .then( res => {
-          $log.log(`GET ${url}:${res.status} success!`);
-          this.origins = res.data;
-          console.log('hitting', this.origins);
-          resolve(this.origins);
-        })
-        .catch( err => {
-          $log.error(`GET ${url}:${err.status} failure!`);
-          reject(err);
+      authService.getToken()
+        .then((token) => {
+          $http.get(`${url}/all`, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          })
+            .then( res => {
+              $log.log(`GET ${url}:${res.status} success!`, res);
+              service.origins = res.data;
+              console.log('hitting', service.origins);
+              resolve(service.origins);
+            })
+            .catch( err => {
+              $log.error(`GET ${url}:${err.status} failure!`, err);
+              reject(err);
+            });
+
         });
+
+    // $log.warn('TOKEN: ', authService.getToken());
+
     });
   };
 
