@@ -6,14 +6,65 @@ require('./scss/base.scss');
 
 // npm modules
 const angular = require('angular');
+const ngRoute = require('angular-route');
 
 // angular modules
-angular.module('demoApp', []);
+angular.module('brewBuddy', [ngRoute])
+.config(['$routeProvider', function($routeProvider){
+  $routeProvider
+  .when('/signup', {
+    template: require('./view/signup/signup.html'),
+    controller: 'SignupController',
+    controllerAs: 'signupCtrl'
+  })
+  .when('/signin', {
+    template: require('./view/signin/signin.html'),
+    controller: 'SigninController',
+    controllerAs: 'signinCtrl'
+  })
+  .when('/home', {
+    template: require('./view/home/home.html'),
+    controller: 'HomeController',
+    controllerAs: 'homeCtrl'
+  })
+  .when('/user', {
+    template: require('./view/user/user.html')
+  })
+  .when('/user/countryoforigin', {
+    template: require('./view/country-of-origin/country-of-origin.html'),
+    controller: 'CountryOfOriginController',
+    controllerAs: 'countryOfOriginCtrl'
+  })
+  .when('/user/method', {
+    template: require('./view/rec-brew-method/rec-brew-method.html'),
+    controller: 'RecBrewMethodController',
+    controllerAs: 'recBrewMethodCtrl'
+  })
+  .otherwise({
+    redirectTo: '/signin'
+  });
+}]);
 
 // angular services
+<<<<<<< HEAD
 require('./service/app-flavor-service');
 // angular components
 require('./component/main');
 require('./component/app-flavor-page');
 require('./component/app-base-flavors');
 require('./component/app-flavor-fruits-floralsSVG');
+=======
+require('./service/auth-service');
+require('./service/origin-service');
+require('./service/method-service');
+require('./service/flavor-service');
+require('./service/entry-service');
+require('./service/user-selections-service');
+
+// angular controllers
+require('./view/country-of-origin/country-of-origin-controller.js');
+require('./view/rec-brew-method/rec-brew-method-controller.js');
+require('./view/signup');
+require('./view/signin');
+require('./view/home');
+>>>>>>> f9ed7a2f93250ebd0e70d19daa1e787f8763a354
