@@ -7,12 +7,12 @@ angular.module('brewBuddy').directive('appFlavorEl', function() {
   return {
     restrict: 'E',
     template: require('./flavor-el.html'),
-    controller: ['flavorService',FlavorElementsController],
+    controller: ['flavorService','$location','userSelectionsService', FlavorElementsController],
     controllerAs: 'flavorElCtrl',
     scope: {}
   };
 
-  function FlavorElementsController(flavorService){
+  function FlavorElementsController(flavorService, $location, userSelectionsService){
 
 
     this.fruitsFloralsData = require('json!../../assets/flavor-data/flavor-fruitsAndFloral-data.json');
@@ -106,6 +106,11 @@ angular.module('brewBuddy').directive('appFlavorEl', function() {
       this.backButtonView = false;
       this.flavorChosen = false;
       this.anotherFlavorView = false;
+    };
+    this.nextPage = function(){
+      userSelectionsService.updateFlavors(this.userFlavors);
+      $location.path('/user/finish');
+      console.log('nextPage hit');
     };
   }
 });
