@@ -33,7 +33,7 @@ describe('testing brew-buddy-frontend-app services', function() {
         }]
       });
 
-    this.originService.fetchOrigins()
+    this.originService.fetchAllOrigins()
       .then(res => {
         expect(res.status).toBe(200);
         expect(Array.isArray(res.data)).toBe(true);
