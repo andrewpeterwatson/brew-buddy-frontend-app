@@ -13,6 +13,11 @@ const ngRoute = require('angular-route');
 angular.module('brewBuddy', [ngRoute])
 .config(['$routeProvider', function($routeProvider){
   $routeProvider
+  .when('/home', {
+    template: require('./view/home/home.html'),
+    controller: 'HomeController',
+    controllerAs: 'homeCtrl'
+  })
   .when('/signup', {
     template: require('./view/signup/signup.html'),
     controller: 'SignupController',
@@ -23,13 +28,18 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'SigninController',
     controllerAs: 'signinCtrl'
   })
-  .when('/home', {
-    template: require('./view/home/home.html'),
-    controller: 'HomeController',
-    controllerAs: 'homeCtrl'
+  .when('/aroma', {
+    template: require('./view/aroma/aroma.html'),
+    controller: 'AromaController',
+    controllerAs: 'aromaCtrl'
+  })
+  .when('/acidity', {
+    template: require('./view/acidity/acidity.html'),
+    controller: 'AcidityController',
+    controllerAs: 'acidityCtrl'
   })
   .otherwise({
-    redirectTo: '/signin'
+    redirectTo: '/home'
   });
 }]);
 
@@ -44,4 +54,7 @@ require('./service/entry-service');
 require('./view/signup');
 require('./view/signin');
 require('./view/home');
+require('./view/aroma');
+require('./view/acidity');
+// require('./view/flavor');
 require('./component/app-nav');

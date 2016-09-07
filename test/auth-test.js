@@ -11,10 +11,10 @@ describe('testing brew-buddy-frontend-app auth-service', function() {
 
     });
 
-    // afterEach(() => {
-    //   this.$httpBackend.verifyNoOutstandingRequest();
-    //   this.$httpBackend.verifyNoOutstandingExpectation();
-    // });
+    afterEach(() => {
+      this.$httpBackend.verifyNoOutstandingRequest();
+      this.$httpBackend.verifyNoOutstandingExpectation();
+    });
   });
 
   it('should get a token and signin', () => {

@@ -1,4 +1,5 @@
-<main ng-controller="SigninController as signinCtrl" class="app-signin" ng-init="signinCtrl.getToken()">
+
+<main class="app-signin" ng-init="signinCtrl.getToken()">
   <form novalidate ng-submit="signinCtrl.signin()" name="signinForm">
     <section class="form-group">
       <label for="username"> Username: </label>
@@ -8,6 +9,7 @@
       ng-model="signinCtrl.user.username"
       ng-class="{ jello: signinForm.$submitted && signinForm.username.$invalid}">
     </section>
+
     <section class="form-group">
       <label for="password"> Password: </label>
       <input  ng-required ng-minlength="3"

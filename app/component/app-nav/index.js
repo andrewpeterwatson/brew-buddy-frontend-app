@@ -19,4 +19,5 @@ angular.module('brewBuddy')
 
 function AppNavModalController(){
   this.showSection = false;
+  this.name = 'tester';
 }
