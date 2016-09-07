@@ -34,11 +34,11 @@ function flavorService($log, $q, $http, authService){
     });
   };
 
-  service.fetchFlavors = function(){
+  service.fetchAllFlavors = function(){
     if(!token) return $q.reject(new Error('not token process not allowed'));
-    $log.debug('flavorService.fetchFlavors');
+    $log.debug('flavorService.fetchAllFlavors');
     return $q((resolve, reject) => {
-      $http.get(url, {
+      $http.get(`${url}/all`, {
         headers: {
           Authorization: `Bearer ${authService.getToken()}`
         }

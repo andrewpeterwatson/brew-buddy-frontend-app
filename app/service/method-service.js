@@ -3,19 +3,19 @@
 
 const angular = require('angular');
 
-angular.module('brewBuddy').factory('methodService', ['$log', '$q', '$http', 'authService', methodService]);
+angular.module('brewBuddy').factory('brewMethodService', ['$log', '$q', '$http', 'authService', brewMethodService]);
 
-function methodService($log, $q, $http, authService){
+function brewMethodService($log, $q, $http, authService){
   let service = {};
   let token = authService.getToken();
-  let url = `${__API_URL__}/api/method`;
+  let url = `${__API_URL__}/api/brew-method`;
 
   // add functionality to the service
-  service.methods = [];
+  service.brewMethods = [];
 
-  service.createMethod = function(data){
+  service.createBrewMethod = function(data){
     if(!token) return $q.reject(new Error('no token process not allowed'));
-    $log.debug('methodService.createMethod');
+    $log.debug('brewMethodService.createBrewMethod');
     return $q((resolve, reject) => {
       $http.post( url , data, {
         headers: {
@@ -24,7 +24,7 @@ function methodService($log, $q, $http, authService){
       })
       .then( res  => {
         $log.log(`POST ${url}:${res.status} success!`);
-        this.methods.push(res.data);
+        this.brewMethod.push(res.data);
         resolve(res.data);
       })
       .catch( err => {
@@ -34,19 +34,19 @@ function methodService($log, $q, $http, authService){
     });
   };
 
-  service.fetchMethods = function(){
+  service.fetchAllBrewMethods = function(){
     if(!token) return $q.reject(new Error('no token process not allowed'));
-    $log.debug('methodService.fetchMethods');
+    $log.debug('methodService.fetchAllMethods');
     return $q((resolve, reject) => {
-      $http.get(url, {
+      $http.get(`${url}/all`, {
         headers: {
           authorization: `Bearer ${authService.getToken()}`
         }
       })
         .then( res => {
           $log.log(`GET ${url}:${res.status} success!`);
-          this.methods = res.data;
-          resolve(this.methods);
+          this.brewMethods = res.data;
+          resolve(this.brewMethods);
         })
         .catch( err => {
           $log.error(`GET ${url}:${err.status} failure!`);
@@ -55,7 +55,7 @@ function methodService($log, $q, $http, authService){
     });
   };
 
-  service.updateMethod = function(data){
+  service.updateBrewMethod = function(data){
     if(!token) return $q.reject(new Error('no token process not allowed'));
     $log.debug('methodService.updateMethod');
     return $q((resolve, reject) => {
@@ -66,8 +66,8 @@ function methodService($log, $q, $http, authService){
       })
         .then( res => {
           $log.log(`GET ${url}:${res.status} success!`);
-          this.methods.forEach((method, index) => {
-            if (method._id === res.data._id) this.methods[index] = res.data;
+          this.brewMethods.forEach((brewMethod, index) => {
+            if (brewMethod._id === res.data._id) this.brewMethods[index] = res.data;
           });
           resolve(res.data);
         })
@@ -78,19 +78,19 @@ function methodService($log, $q, $http, authService){
     });
   };
 
-  service.deleteMethod = function(methodId){
+  service.deleteBrewMethod = function(brewMethodId){
     if(!token) return $q.reject(new Error('no token process not allowed'));
-    $log.debug('methodService.deleteMethod');
+    $log.debug('methodService.deleteBrewMethod');
     return $q((resolve, reject) => {
-      $http.delete(`${url}/${methodId}`, {
+      $http.delete(`${url}/${brewMethodId}`, {
         headers: {
           authorization: `Bearer ${authService.getToken()}`
         }
       })
         .then((res) => {
           $log.log(`DELETE ${url}:${res.status} success!`);
-          this.methods.forEach((method, index) => {
-            if (method._id === methodId) this.methods.splice(index, 1);
+          this.brewMethods.forEach((brewMethod, index) => {
+            if (brewMethod._id === brewMethodId) this.brewMethods.splice(index, 1);
           });
           resolve(res.data);
         })
