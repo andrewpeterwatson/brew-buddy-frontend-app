@@ -45,6 +45,11 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'FlavorPageController',
     controllerAs: 'flavPageCtrl'
   })
+  .when('/user/experience', {
+    template: require('./view/experience/experience.html'),
+    controller: 'ExperienceController',
+    controllerAs: 'expCtrl'
+  })
   .otherwise({
     redirectTo: '/signin'
   });
@@ -52,7 +57,6 @@ angular.module('brewBuddy', [ngRoute])
 
 // angular services
 // angular components
-require('./component/app-flavor-el');
 
 require('./service/auth-service');
 require('./service/origin-service');
@@ -65,7 +69,11 @@ require('./service/user-selections-service');
 // angular controllers
 require('./view/country-of-origin/country-of-origin-controller.js');
 require('./view/rec-brew-method/rec-brew-method-controller.js');
+require('./view/experience/experience-controller');
+
 require('./view/signup');
 require('./view/signin');
 require('./view/home');
 require('./view/flavor');
+
+require('./component/app-flavor-el');
