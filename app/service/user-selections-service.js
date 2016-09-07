@@ -10,7 +10,8 @@ function UserSelectionsService($q, $log, $http) {
 
   service.userSelections = {
     origin: null,
-    brewMethod: null
+    brewMethod: null,
+    userFlavors: null
   };
 
   service.updateOrigin = function(origin) {
@@ -21,6 +22,11 @@ function UserSelectionsService($q, $log, $http) {
   service.updateBrewMethod = function(method) {
     $log.log('UserSelectionsService.updateBrewMethod');
     service.userSelections.brewMethod = method;
+  };
+
+  service.updateFlavors = function(flavorArr) {
+    service.userSelections.userFlavors = flavorArr;
+    console.log('user selections service flavors', service.userSelections.userFlavors);
   };
 
   return service;
