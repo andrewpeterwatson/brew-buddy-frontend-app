@@ -55,10 +55,17 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'FlavorPageController',
     controllerAs: 'flavPageCtrl'
   })
+<<<<<<< HEAD
+  .when('/user/finish', {
+    template: require('./view/finish/finish.html'),
+    controller: 'FinishController',
+    controllerAs: 'finishCtrl'
+=======
   .when('/user/pastbrews', {
     template: require('./view/past-brews/past-brews.html'),
     controller: 'PastBrewsController',
     controllerAs: 'pastBrewsCtrl'
+>>>>>>> 0f4c7a3eab4b327dded36c796034e34f08a20439
   })
   .otherwise({
     redirectTo: '/home'
@@ -80,6 +87,7 @@ require('./service/aroma-service');
 
 // angular controllers
 require('./view/country-of-origin/country-of-origin-controller.js');
+require('./view/finish/finish-controller.js');
 require('./view/rec-brew-method/rec-brew-method-controller.js');
 require('./view/past-brews/past-brews-controller');
 require('./view/signup');
