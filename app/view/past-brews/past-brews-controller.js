@@ -6,7 +6,8 @@ angular.module('brewBuddy')
 
 function PastBrewsController($log, $location, userSelectionsService, entryService) {
 
-  this.pastBrews = {};
+  this.pastBrews = [];
+  this.showModal = false;
 
   // this.fetchPastBrews = function() {
   //   $log.debug('pastBrewsCtrl.fetchPastBrews');
@@ -20,13 +21,27 @@ function PastBrewsController($log, $location, userSelectionsService, entryServic
   // };
 
   this.fetchPastBrews = function() {
-    this.pastBrews = {
-      origin: 'Antarctica',
-      brewMethod: 'Smash into some rocks',
-      flavor: 'butts',
-      userExpRating: 2,
-      date: 'right now'
-    };
+    this.pastBrews = [
+      {
+        origin: 'Antarctica',
+        brewMethod: 'Smash into some rocks',
+        flavor: 'butts',
+        userExpRating: 2,
+        date: 'right now'
+      },
+      {
+        origin: 'Antarctica',
+        brewMethod: 'Smash into some rocks',
+        flavor: 'butts',
+        userExpRating: 2,
+        date: 'also now'
+      }
+    ];
   };
 
+  this.showBrewModal = function(brew) {
+    console.log('thee brew ', brew);
+    this.selectedBrew = brew;
+    this.showModal = !this.showModal;
+  }
 }
