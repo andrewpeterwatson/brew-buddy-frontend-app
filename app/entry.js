@@ -60,6 +60,11 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'ExperienceController',
     controllerAs: 'expCtrl'
   })
+  .when('/user/finish', {
+    template: require('./view/finish/finish.html'),
+    controller: 'FinishController',
+    controllerAs: 'finishCtrl'
+  })
   .when('/user/pastbrews', {
     template: require('./view/past-brews/past-brews.html'),
     controller: 'PastBrewsController',
@@ -85,6 +90,7 @@ require('./service/aroma-service');
 
 // angular controllers
 require('./view/country-of-origin/country-of-origin-controller.js');
+require('./view/finish/finish-controller.js');
 require('./view/rec-brew-method/rec-brew-method-controller.js');
 require('./view/experience/experience-controller');
 require('./view/past-brews/past-brews-controller');

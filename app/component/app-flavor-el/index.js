@@ -110,7 +110,6 @@ angular.module('brewBuddy').directive('appFlavorEl', function() {
     this.nextPage = function(){
       userSelectionsService.updateFlavors(this.userFlavors);
       $location.path('/user/finish');
-      console.log('entry model', userSelectionsService.userSelections);
     };
   }
 });

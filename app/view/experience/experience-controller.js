@@ -13,7 +13,7 @@ function ExperienceController($location, userSelectionsService){
   this.submit = function(text){
     this.userExpDesc = text;
     userSelectionsService.updateUserExp(this.userExpDesc, this.userExpRating);
-    console.log('user Exp controller', this.userExpDesc, this.userExpRating);
+    console.log('userSelections', userSelectionsService.userSelections);
   };
   this.rateExp = function(rating){
     this.userExpRating;
