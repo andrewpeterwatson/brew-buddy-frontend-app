@@ -1,20 +1,30 @@
 'use strict';
 
-const angular = require('angular');
-const brewbuddy = angular.module('brewBuddy');
+require('./home.scss');
 
-brewbuddy.controller('HomeController', ['$log', '$location', 'authService', HomeController]);
+const angular = require('angular');
+// const brewbuddy = angular.module('brewBuddy');
+angular.module('brewBuddy')
+.controller('HomeController', ['$log', '$location', 'authService', HomeController]);
+
+// function HomeController($log, $location, authService){
+//   $log.debug('init homeCtrl');
+//
+//   this.getToken = function(){
+//     authService.getToken()
+//     .catch( () => $location.path('/signin'));
+//   };
+//
+//   this.logout = function(){
+//     authService.logout()
+//     .then( () => $location.path('/signin'));
+//   };
+// }
 
 function HomeController($log, $location, authService){
-  $log.debug('init homeCtrl');
+  $log.debug('default page: should take to signin');
 
-  this.getToken = function(){
-    authService.getToken()
-    .catch( () => $location.path('/login'));
-  };
-
-  this.logout = function(){
-    authService.logout()
-    .then( () => $location.path('/login'));
+  this.toSignin = function(){
+    $location.path('/signin');
   };
 }

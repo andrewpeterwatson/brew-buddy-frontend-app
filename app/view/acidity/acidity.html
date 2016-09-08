@@ -1,0 +1,20 @@
+<app-nav></app-nav>
+
+<form novalidate class="acidity-class" name="desc" >
+  <h1>Acidity</h1>
+  Desc:
+  <input class="acidity-input" type="text" require/>
+  <br>
+  Intensity:
+  <br>
+  <label>Strong</label>
+    <input type="radio" ng-model="intensityLevel" value="strong"/>
+  <br>
+  <label>Medium</label>
+    <input type="radio" ng-model="intensityLevel" value="medium"/>
+  <br>
+  <label>Light</label>
+    <input type="radio" ng-model="intensityLevel" value='light'/>
+  <br>
+
+  <button class="btb btn-success" ng-click="acidityCtrl.nextPageFlavor(acidity)"> NEXT </button>
