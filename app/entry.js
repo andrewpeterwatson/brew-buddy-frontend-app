@@ -71,7 +71,7 @@ require('./service/entry-service');
 require('./service/app-flavor-service');
 require('./service/user-selections-service');
 require('./service/aroma-service');
-// require('./service/acidity-service');
+require('./service/acidity-service');
 
 // angular controllers
 require('./view/country-of-origin/country-of-origin-controller.js');

@@ -1,42 +1,4 @@
-// 'use strict';
-//
-// const testUrl = 'http://localhost:3000';
-//
-// describe('testing brew-buddy-frontend-app services', function() {
-//   beforeEach(() => {
-//     angular.mock.module('brewBuddy');
-//     angular.mock.inject((originService, methodService, flavorService, entryService, authService, $httpBackend) => {
-//       this.originService = originService;
-//       this.methodService = methodService;
-//       this.flavorService = flavorService;
-//       this.entryService = entryService;
-//       this.authService = authService;
-//       // this.aromaService = aromaService;
-//       // this.acidityService = acidityService;
-//       this.$httpBackend = $httpBackend;
-//     });
-//   });
-// //1111111111111
-//   // it('testing acid-service', () => {
-//   //   const authString = this.authService.getToken();
-//   //   const headers = {
-//   //     'Accept': 'application/json',
-//   //     'Authorization': `Bearer ${authString}`
-//   //   };
-//   //   this.$httpBackend.expectGET(`${testUrl}/api/acidity`, headers)
-//   //     .respond(200, {
-//   //       status: 'ok',
-//   //       data: [{
-//   //         country: 'Stumptown'
-//   //       }, {
-//   //         country: 'Hackerton'
-//   //       }]
-//   //     });
-//   //   this.acidityService.fetchAciditys()
-//   //   .then( res => {
-//   //     expect(true).toBe(true);
-//   //   });
-//   // });
+
 // //22222222222
 //   // it('should get some origin', () => {
 //   //   const authString = this.authService.getToken();
