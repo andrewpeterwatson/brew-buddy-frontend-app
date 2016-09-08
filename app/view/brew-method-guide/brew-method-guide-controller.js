@@ -9,6 +9,7 @@ angular.module('brewBuddy')
 
 function BrewMethodGuideController($location){
   this.brewFinished = function(){
-    $location.path('./user/aroma');
+    console.log('brew finished');
+    $location.path('/user/aroma');
   };
 }

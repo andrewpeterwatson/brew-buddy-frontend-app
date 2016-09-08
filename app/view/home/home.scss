@@ -1,14 +1,10 @@
 @import "_theme";
 
 .app-home {
-
-    // position: relative;
-    position: fixed;;
-    top: 30%;
-    right: 20%;
-    padding: 20px;
-    background-color: $app-light;
-    width: 60%;
+height: 100%;
+width: 100%;
+background-image: url('../../assets/images/brew-buddy-logo.png');
+background-repeat: no-repeat;
 
     .btn-danger {
       position: relative;

@@ -7,7 +7,7 @@ angular.module('brewBuddy')
 
 function RecBrewMethodController($log, $location, methodService, userSelectionsService) {
 
-  this.brewMethods = ['chemex', 'press', 'aeropress', 'wave'];
+  this.brewMethods = ['chemex', 'press', 'aero', 'wave'];
 
   this.submitRecBrewMethod = function(method) {
     $log.debug('RecBrewMethodController.submitRecBrewMethod');
