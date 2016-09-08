@@ -1,7 +1,7 @@
 @import "_theme";
 
-.app-signin {
-  form {
+.app-home {
+
     // position: relative;
     position: fixed;;
     top: 30%;
@@ -9,5 +9,9 @@
     padding: 20px;
     background-color: $app-light;
     width: 60%;
-  }
+
+    .btn-danger {
+      position: relative;
+      right: 0%;
+    }
 }

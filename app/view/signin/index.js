@@ -3,9 +3,9 @@
 require('./_signin.scss');
 
 const angular = require('angular');
-const brewBuddy = angular.module('brewBuddy');
-
-brewBuddy.controller('SigninController', ['$log', '$location','authService', SigninController]);
+// const brewBuddy = angular.module('brewBuddy');
+angular.module('brewBuddy')
+.controller('SigninController', ['$log', '$location','authService', SigninController]);
 
 function SigninController($log, $location, authService){
   $log.debug('init signinCtrl');
@@ -22,6 +22,7 @@ function SigninController($log, $location, authService){
     .then( token => {
       $log.info('token', token);
       $location.path('/home');
+      
     })
     .catch( err => {
       $log.error(err);
