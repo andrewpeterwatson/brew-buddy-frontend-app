@@ -108,3 +108,4 @@ require('./view/acidity');
 require('./view/flavor');
 require('./component/app-nav');
 require('./component/app-flavor-el');
+require('./component/app-brew-method-guide-gallery');
