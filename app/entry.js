@@ -27,16 +27,6 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'HomeController',
     controllerAs: 'homeCtrl'
   })
-  .when('/aroma', {
-    template: require('./view/aroma/aroma.html'),
-    controller: 'AromaController',
-    controllerAs: 'aromaCtrl'
-  })
-  .when('/acidity', {
-    template: require('./view/acidity/acidity.html'),
-    controller: 'AcidityController',
-    controllerAs: 'acidityCtrl'
-  })
   .when('/user', {
     template: require('./view/user/user.html')
   })
@@ -50,22 +40,35 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'RecBrewMethodController',
     controllerAs: 'recBrewMethodCtrl'
   })
+  .when('/user/aroma', {
+    template: require('./view/aroma/aroma.html'),
+    controller: 'AromaController',
+    controllerAs: 'aromaCtrl'
+  })
+  .when('/user/acidity', {
+    template: require('./view/acidity/acidity.html'),
+    controller: 'AcidityController',
+    controllerAs: 'acidityCtrl'
+  })
   .when('/user/flavor', {
     template: require('./view/flavor/flavor.html'),
     controller: 'FlavorPageController',
     controllerAs: 'flavPageCtrl'
   })
-<<<<<<< HEAD
+  .when('/user/experience', {
+    template: require('./view/experience/experience.html'),
+    controller: 'ExperienceController',
+    controllerAs: 'expCtrl'
+  })
   .when('/user/finish', {
     template: require('./view/finish/finish.html'),
     controller: 'FinishController',
     controllerAs: 'finishCtrl'
-=======
+  })
   .when('/user/pastbrews', {
     template: require('./view/past-brews/past-brews.html'),
     controller: 'PastBrewsController',
     controllerAs: 'pastBrewsCtrl'
->>>>>>> 0f4c7a3eab4b327dded36c796034e34f08a20439
   })
   .otherwise({
     redirectTo: '/home'
@@ -89,6 +92,7 @@ require('./service/aroma-service');
 require('./view/country-of-origin/country-of-origin-controller.js');
 require('./view/finish/finish-controller.js');
 require('./view/rec-brew-method/rec-brew-method-controller.js');
+require('./view/experience/experience-controller');
 require('./view/past-brews/past-brews-controller');
 require('./view/signup');
 require('./view/signin');

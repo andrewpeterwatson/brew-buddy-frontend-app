@@ -7,11 +7,12 @@ angular.module('brewBuddy')
 
 function FinishController($log, $location, userSelectionsService) {
 
-  this.finish = [];
-  this.finishBody = [];
+  this.finishLength;
+  this.finishBody;
 
-  this.submitFinish = function(finish, finishBody){
-    userSelectionsService.updateFinish(finish, finishBody);
-    $location.path('/user/finish');
+  this.submitFinish = function(finishLength, finishBody){
+    userSelectionsService.updateFinish(finishLength, finishBody);
+    $location.path('/user/experience');
+    console.log('finish', this.finishBody, 'length', this.finishLength);
   };
 }
