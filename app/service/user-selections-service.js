@@ -11,7 +11,9 @@ function UserSelectionsService($q, $log, $http) {
   service.userSelections = {
     origin: null,
     brewMethod: null,
-    userFlavors: null
+    userFlavors: null,
+    userExpDesc: null,
+    userExpRating: null
   };
 
   service.updateOrigin = function(origin) {
@@ -27,6 +29,11 @@ function UserSelectionsService($q, $log, $http) {
   service.updateFlavors = function(flavorArr) {
     service.userSelections.userFlavors = flavorArr;
     console.log('user selections service flavors', service.userSelections.userFlavors);
+  };
+  service.updateUserExp = function(desc, rating){
+    service.userSelections.userExpDesc = desc;
+    service.userSelections.userExpRating = rating;
+    console.log('user exp SERVICE',service.userSelections.userExpDesc, service.userSelections.userExpRating);
   };
 
   return service;
