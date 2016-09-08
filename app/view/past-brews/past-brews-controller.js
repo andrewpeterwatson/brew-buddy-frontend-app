@@ -2,9 +2,9 @@
 
 const angular = require('angular');
 angular.module('brewBuddy')
-.controller('PastBrewsController', ['$log', '$location', 'UserSelectionsService', 'entryService', PastBrewsController]);
+.controller('PastBrewsController', ['$log', '$location', 'userSelectionsService', 'entryService', PastBrewsController]);
 
-function PastBrewsController($log, $location, UserSelectionService, entryService) {
+function PastBrewsController($log, $location, userSelectionsService, entryService) {
 
   this.pastBrews = {};
 
@@ -24,7 +24,8 @@ function PastBrewsController($log, $location, UserSelectionService, entryService
       origin: 'Antarctica',
       brewMethod: 'Smash into some rocks',
       flavor: 'butts',
-      date: 2016-09-08
+      userExpRating: 2,
+      date: 'right now'
     };
   };
 
