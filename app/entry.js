@@ -40,10 +40,30 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'RecBrewMethodController',
     controllerAs: 'recBrewMethodCtrl'
   })
+  .when('/user/aroma', {
+    template: require('./view/aroma/aroma.html'),
+    controller: 'AromaController',
+    controllerAs: 'aromaCtrl'
+  })
+  .when('/user/acidity', {
+    template: require('./view/acidity/acidity.html'),
+    controller: 'AcidityController',
+    controllerAs: 'acidityCtrl'
+  })
   .when('/user/flavor', {
     template: require('./view/flavor/flavor.html'),
     controller: 'FlavorPageController',
     controllerAs: 'flavPageCtrl'
+  })
+  .when('/user/experience', {
+    template: require('./view/experience/experience.html'),
+    controller: 'ExperienceController',
+    controllerAs: 'expCtrl'
+  })
+  .when('/user/finish', {
+    template: require('./view/finish/finish.html'),
+    controller: 'FinishController',
+    controllerAs: 'finishCtrl'
   })
   .when('/user/pastbrews', {
     template: require('./view/past-brews/past-brews.html'),
@@ -51,13 +71,12 @@ angular.module('brewBuddy', [ngRoute])
     controllerAs: 'pastBrewsCtrl'
   })
   .otherwise({
-    redirectTo: '/signin'
+    redirectTo: '/home'
   });
 }]);
 
 // angular services
 // angular components
-require('./component/app-flavor-el');
 
 require('./service/auth-service');
 require('./service/origin-service');
@@ -66,12 +85,20 @@ require('./service/flavor-service');
 require('./service/entry-service');
 require('./service/app-flavor-service');
 require('./service/user-selections-service');
+require('./service/aroma-service');
+// require('./service/acidity-service');
 
 // angular controllers
 require('./view/country-of-origin/country-of-origin-controller.js');
+require('./view/finish/finish-controller.js');
 require('./view/rec-brew-method/rec-brew-method-controller.js');
+require('./view/experience/experience-controller');
 require('./view/past-brews/past-brews-controller');
 require('./view/signup');
 require('./view/signin');
 require('./view/home');
+require('./view/aroma');
+require('./view/acidity');
 require('./view/flavor');
+require('./component/app-nav');
+require('./component/app-flavor-el');

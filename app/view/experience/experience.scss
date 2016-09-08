@@ -1,0 +1,12 @@
+.experience{
+
+// i:hover {
+//   color: red;
+// }
+#starThree:hover {
+  color: red;
+}
+#starFour:hover ~ #starOne {
+    background: #ccc
+}
+}

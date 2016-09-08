@@ -1,0 +1,33 @@
+<div class="finish">
+  <h2>Finish</h2>
+<form novalidate name="finish" ng-submit="
+finishCtrl.submitFinish(finishCtrl.finishLength, finishCtrl.finishBody)">
+  <label>
+    <input type="radio" ng-model="finishCtrl.finishLength" value="Quick">
+    Quick
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="finishCtrl.finishLength" value="Medium">
+    Medium
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="finishCtrl.finishLength" value="Long">
+    Long
+  </label><br/>
+  <br/>
+
+  <label>
+    <input type="radio" ng-model="finishCtrl.finishBody" value="Light">
+    Light
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="finishCtrl.finishBody" value="Medium">
+    Medium
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="finishCtrl.finishBody" value="Full">
+    Full
+  </label><br/>
+<button type="submit">Next</button>
+ </form>
+ </div>
