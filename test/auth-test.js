@@ -8,7 +8,6 @@ describe('testing brew-buddy-frontend-app auth-service', function() {
     angular.mock.inject((authService, $httpBackend) => {
       this.authService = authService;
       this.$httpBackend = $httpBackend;
-
     });
 
     afterEach(() => {
@@ -25,6 +24,7 @@ describe('testing brew-buddy-frontend-app auth-service', function() {
       'Accept':'application/json',
       'Authorization': `Bearer ${authString}`
     };
+
 
     this.$httpBackend.expectGET(`${testUrl}/api/signin`,data, headers)
     .respond(200, token);

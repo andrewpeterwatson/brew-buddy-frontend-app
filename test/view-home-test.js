@@ -14,7 +14,7 @@ describe('testing view-homeController', function(){
   });
   it('should get homeCtrl', () => {
     // console.log('SHOW controller', typeof this.homeCtrl);
-    expect(typeof this.homeCtrl).toBe('opbject');
+    expect(typeof this.homeCtrl).toBe('object');
     expect(true).toBe(true);
   });
 });

@@ -21,7 +21,7 @@ angular.module('brewBuddy')
 //   };
 // }
 
-function HomeController($log, $location){
+function HomeController($log, $location, authService){
   $log.debug('default page: should take to signin');
 
   this.toSignin = function(){
