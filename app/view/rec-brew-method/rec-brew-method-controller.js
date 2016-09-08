@@ -13,6 +13,6 @@ function RecBrewMethodController($log, $location, methodService, userSelectionsS
     $log.debug('RecBrewMethodController.submitRecBrewMethod');
     userSelectionsService.updateBrewMethod(method);
     console.log('user select service brewMethod', userSelectionsService);
-    $location.path('/user/recipe');
+    $location.path('/user/aroma');
   };
 }

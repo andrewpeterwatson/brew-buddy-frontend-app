@@ -4,14 +4,19 @@ require('./acidity.scss');
 
 const angular = require('angular');
 angular.module('brewBuddy')
-.controller('AcidityController', ['$log', '$location', 'acidityService', 'userSelectionsService', AcidityController]);
+.controller('AcidityController', ['$log', '$location', 'userSelectionsService', AcidityController]);
 
-function AcidityController($log, $location, acidityService, userSelectionsService){
+function AcidityController($log, $location, userSelectionsService){
   $log.debug('AcidityController');
-  this.nextPageFlavor = function(acidity){
-    userSelectionsService.updateAcidity(acidity);
-    $location.path('/flavor');
-    console.log('????????????', acidity);
-    console.log('userSelections', userSelectionsService.userSelections);
+
+
+  this.acidDesc;
+  this.intensityLevel;
+
+
+  this.nextPageFlavor = function(){
+    userSelectionsService.updateAcidity(this.acidDesc, this.intensityLevel);
+    console.log(this.acidDesc, this.intensityLevel);
+    $location.path('/user/flavor');
   };
 }

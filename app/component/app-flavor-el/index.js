@@ -7,12 +7,12 @@ angular.module('brewBuddy').directive('appFlavorEl', function() {
   return {
     restrict: 'E',
     template: require('./flavor-el.html'),
-    controller: ['flavorService','$location','userSelectionsService', FlavorElementsController],
+    controller: ['appFlavorService','$location','userSelectionsService', FlavorElementsController],
     controllerAs: 'flavorElCtrl',
     scope: {}
   };
 
-  function FlavorElementsController(flavorService, $location, userSelectionsService){
+  function FlavorElementsController(appFlavorService, $location, userSelectionsService){
 
 
     this.fruitsFloralsData = require('json!../../assets/flavor-data/flavor-fruitsAndFloral-data.json');
@@ -43,8 +43,8 @@ angular.module('brewBuddy').directive('appFlavorEl', function() {
       this.flavorTypeView = false;
       this.flavorTitleView = false;
       this.flavorSelectionsView = false;
-      flavorService.fetchFlavorType(typeData, dataCat);
-      this.currentCatSelection = flavorService.flavorTypes;
+      appFlavorService.fetchFlavorType(typeData, dataCat);
+      this.currentCatSelection = appFlavorService.flavorTypes;
       this.currentCatData = typeData;
       this.flavorTypeView = true;
     };
@@ -57,8 +57,8 @@ angular.module('brewBuddy').directive('appFlavorEl', function() {
       this.currentFlavorTitles;
       this.flavorSelected;
       this.currentTitleSelection = title;
-      flavorService.fetchFlavorTitle(this.currentCatData, this.currentTitleSelection);
-      this.currentFlavorTitles = flavorService.flavorTitles;
+      appFlavorService.fetchFlavorTitle(this.currentCatData, this.currentTitleSelection);
+      this.currentFlavorTitles = appFlavorService.flavorTitles;
     };
     this.selectFlavor = function(title){
       if (this.userFlavors.includes(title)) {
@@ -110,7 +110,7 @@ angular.module('brewBuddy').directive('appFlavorEl', function() {
     this.nextPage = function(){
       userSelectionsService.updateFlavors(this.userFlavors);
       $location.path('/user/finish');
-      console.log('nextPage hit');
+      console.log('entry model', userSelectionsService.userSelections);
     };
   }
 });

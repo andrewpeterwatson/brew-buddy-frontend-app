@@ -15,7 +15,7 @@ function UserSelectionsService($q, $log) {
     userExpDesc: null,
     userExpRating: null,
     aroma: null,
-    acidity: null,
+    acidityDesc: null,
   };
 
   service.updateOrigin = function(origin) {
@@ -31,9 +31,10 @@ function UserSelectionsService($q, $log) {
     service.userSelections.aroma = aroma;
     console.log('service.userSelections.aroma');
   };
-  service.updateAcidity = function(acidity) {
+  service.updateAcidity = function(desc, strength) {
     $log.log('UserSelectionsService.updateAcidity');
-    service.userSelections.acidity = acidity;
+    service.userSelections.acidityDesc = desc;
+    service.userSelections.acidityStrength = strength;
   };
   service.updateFlavors = function(flavorArr) {
     service.userSelections.userFlavors = flavorArr;
