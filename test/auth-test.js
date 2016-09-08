@@ -8,14 +8,12 @@ describe('testing brew-buddy-frontend-app auth-service', function() {
     angular.mock.inject((authService, $httpBackend) => {
       this.authService = authService;
       this.$httpBackend = $httpBackend;
-
     });
 
-
-    // afterEach(() => {
-    //   this.$httpBackend.verifyNoOutstandingRequest();
-    //   this.$httpBackend.verifyNoOutstandingExpectation();
-    // });
+    afterEach(() => {
+      this.$httpBackend.verifyNoOutstandingRequest();
+      this.$httpBackend.verifyNoOutstandingExpectation();
+    });
   });
 
   it('should get a token and signin', () => {

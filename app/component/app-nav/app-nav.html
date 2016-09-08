@@ -1,0 +1,15 @@
+<div class="app-nav">
+  <i class="fa fa-coffee" aria-hidden="true" ng-click="HomeController"></i>
+  <i class="fa fa-cog" aria-hidden="true" ng-click="appNavModalCtrl.showSection = !appNavModalCtrl.showSection"></i>
+</div>
+
+<section ng-if="appNavModalCtrl.showSection" class="app-section">
+  <div class="app-modal-class">
+    <h2>Disclaimer!</h2>
+    <h3> Are you sure you want to log out? </h3>
+    <button ng-click="appNavModalCtrl.showSection=false" class="btn btn-default">No</button>
+    <!-- <button ng-click="" class="btn btn-danger">Yes</button> -->
+    <button ng-click="homeCtrl.logout()" class="btn btn-danger">Yes</button>
+
+  </div>
+</section>

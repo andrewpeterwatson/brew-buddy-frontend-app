@@ -27,6 +27,16 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'HomeController',
     controllerAs: 'homeCtrl'
   })
+  .when('/aroma', {
+    template: require('./view/aroma/aroma.html'),
+    controller: 'AromaController',
+    controllerAs: 'aromaCtrl'
+  })
+  .when('/acidity', {
+    template: require('./view/acidity/acidity.html'),
+    controller: 'AcidityController',
+    controllerAs: 'acidityCtrl'
+  })
   .when('/user', {
     template: require('./view/user/user.html')
   })
@@ -46,13 +56,12 @@ angular.module('brewBuddy', [ngRoute])
     controllerAs: 'flavPageCtrl'
   })
   .otherwise({
-    redirectTo: '/signin'
+    redirectTo: '/home'
   });
 }]);
 
 // angular services
 // angular components
-require('./component/app-flavor-el');
 
 require('./service/auth-service');
 require('./service/origin-service');
@@ -61,6 +70,8 @@ require('./service/flavor-service');
 require('./service/entry-service');
 require('./service/app-flavor-service');
 require('./service/user-selections-service');
+require('./service/aroma-service');
+// require('./service/acidity-service');
 
 // angular controllers
 require('./view/country-of-origin/country-of-origin-controller.js');
@@ -68,4 +79,8 @@ require('./view/rec-brew-method/rec-brew-method-controller.js');
 require('./view/signup');
 require('./view/signin');
 require('./view/home');
+require('./view/aroma');
+require('./view/acidity');
 require('./view/flavor');
+require('./component/app-nav');
+require('./component/app-flavor-el');

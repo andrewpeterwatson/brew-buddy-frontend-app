@@ -2,9 +2,9 @@
 'use strict';
 
 const angular = require('angular');
-const brewBuddy = angular.module('brewBuddy');
-
-brewBuddy.factory('authService', ['$log', '$q', '$http', '$window', authService]);
+// const brewBuddy = angular.module('brewBuddy');
+angular.module('brewBuddy')
+.factory('authService', ['$log', '$q', '$http', '$window', authService]);
 
 function authService( $log, $q, $http, $window){
   let service = {};
