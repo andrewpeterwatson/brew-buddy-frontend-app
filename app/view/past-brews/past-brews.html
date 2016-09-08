@@ -4,8 +4,12 @@
 
   <ol>
     <li ng-repeat="pastbrew in pastBrewsCtrl.fetchPastBrews()">
-      {{ pastbrew.date }}
+      {{ pastBrews.date }}
     </li>
   </ol>
+
+  <div ng-show="pastBrewsCtrl.fetchPastBrews === false">
+    <p> No past brews to show! </p>
+  </div>
 
 </div>
