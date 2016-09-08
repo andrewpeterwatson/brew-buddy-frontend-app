@@ -10,7 +10,11 @@
   </ol>
 
   <div ng-if="pastBrewsCtrl.showModal" class="pastBrewModal">
-    <h2> {{pastBrewsCtrl.selectedBrew.date}}</h2>
+
+    <i class="fa fa-times" aria-hidden="true"
+    ng-click="pastBrewsCtrl.closeModal()"></i>
+
+    <h2> {{ pastBrewsCtrl.selectedBrew.date }} </h2>
     <p> {{ pastBrewsCtrl.selectedBrew.origin }}</p>
   </div>
 
