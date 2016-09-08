@@ -45,6 +45,11 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'FlavorPageController',
     controllerAs: 'flavPageCtrl'
   })
+  .when('/user/finish', {
+    template: require('./view/finish/finish.html'),
+    controller: 'FinishController',
+    controllerAs: 'finishCtrl'
+  })
   .otherwise({
     redirectTo: '/signin'
   });
@@ -64,6 +69,7 @@ require('./service/user-selections-service');
 
 // angular controllers
 require('./view/country-of-origin/country-of-origin-controller.js');
+require('./view/finish/finish-controller.js');
 require('./view/rec-brew-method/rec-brew-method-controller.js');
 require('./view/signup');
 require('./view/signin');

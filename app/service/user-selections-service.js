@@ -18,6 +18,13 @@ function UserSelectionsService($q, $log, $http) {
     $log.log('UserSelectionsService.updateOrigin');
     service.userSelections.origin = origin;
   };
+  service.updateFinish = function(finish, finishBody) {
+    $log.log('UserSelectionsService.updateFinish');
+    $log.log('UserSelectionsService.updateFinishBody');
+    service.userSelections.finish = finish;
+    service.userSelections.finishBody = finishBody;
+
+  };
 
   service.updateBrewMethod = function(method) {
     $log.log('UserSelectionsService.updateBrewMethod');
