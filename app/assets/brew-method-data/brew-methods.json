@@ -1,0 +1,151 @@
+{
+  "chemex": [
+    {
+      "name": "Chemex",
+      "brewRatio": "15",
+      "brewTimer": "2",
+      "step": "The Kettle",
+      "desc": "Fill the Kettle and set to boil.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "The Beans",
+      "desc": "Weigh out your beans. 1g beans for every 15g of water.",
+      "imgSrc":"../../app/asset/image/beans.jpg"
+    },{
+      "step": "The Chemex",
+      "desc": "Set up your Chemex by placing the filter in the top compartment of the Chemex making sure the 3-layered side is facing the spout. this allows air to escape during the brew process.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "The Rinse",
+      "desc": "Rinse the filter with ample water, around 16oz, to prevent any papery taste from affecting the brew. This also preheats the Chemex.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "Almost ready...",
+      "desc": "Once thoroughly saturated, tip the Chemex over a sink to dispose of the rinse water. Don't be tempted to remove the filter to empty faster; it can be difficult to secure back into place once removed.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "Time to Weigh",
+      "desc": " Place your Chemex, complete with rinsed filter, on the scale and tare to zero.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "The Grind",
+      "desc": "Grind your coffee and add it to the Chemex filter. Check to see that the coffee weight hasn't changed after grinding—then tare to zero again.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "The Bloom",
+      "desc": "Start your timer and pour 90g of water over the grounds. The goal is even saturation, so pour slowly in a clockwise pattern. Don't worry if you see a few drips falling through. This bloom allows the coffee to de-gas, enabling the water toyield the full potential of the coffee. This is an essential step that shouldnever be rushed.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "The Brew",
+      "desc": "After about a minute, add water in stages (around 70–100g at a time)until you reach the desired final brew weight, making sure that the grounds are never exposed to air until the brew is finished. Concentrate the pour towards the center of the Chemex, working your way outwards to about a centimeter from the edge of the slurry. The water stream from the pouring kettle should be slow enough to fall straight down, not at an angle.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "The last drop",
+      "desc": " Once the drips stall to every couple of seconds, your brew is finished. If your grind was correct, and you poured at the right speed, this should have taken between 4-5 minutes. Remove the filter and discard. Enjoy!",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    }
+  ],
+  "press": [
+    {
+      "name": "French Press",
+      "brewRatio": "16",
+      "brewTimer": "4",
+      "step": "lets start here.",
+      "desc": " Remove the plunger and closely inspect that no old coffee oils or grounds are present on any plunger pieces, the lid, or cylinder. Besure to rebuild before brewing.",
+      "imgSrc": "../../app/asset/image/beans.jpg"
+    },
+    {
+      "step": "A watched pot never...",
+      "desc": "Put a kettle of water on to boil. You will use this for brewing as well as preheating your French press.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "Weight here",
+      "desc": "Weigh out your coffee. 1gm coffee for every 16g water. Set the grinder to the appropriate setting (coarse).",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "Lets heat it up!",
+      "desc": "Once the kettle boils, preheat the French press and decantingvessels (carafes or mugs, etc.) with some water.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "Start at zero",
+      "desc": "Pour out the preheating water. Place the French press on the scaleand tare it to zero.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "The daily grind.",
+      "desc": "Grind your coffee and add it to the French press. Check to see that the coffee weight hasn't changed, then tare to zero again.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "it takes Time",
+      "desc": "Start the timer (set for 5 minutes) as you begin to pour the freshlyboiled hot water.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "pour old press.",
+      "desc": "Completely saturate the grounds as you pour. Pour slowly to ensure you can monitor the scale display accurately and achievethe correct coffee to water ratio.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "Time to mix it up!",
+      "desc": "After a minute give the brew six back-and-forth stirs and place the filter lid on top without plunging.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "Take the Plunge",
+      "desc": "After 4 minutes, press the plunger down slowly and carefully.Pressing too quickly or forcefully may lead to hot coffee spurting.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "Decant keep us apart",
+      "desc": "Once the plunger filter pushes the grounds to the bottom, immediately decant the brew into a thermal carafe for serving.",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    }
+  ],
+  "aero": [
+    {
+      "name": "AeroPress",
+      "step": "aero1",
+      "desc": "the door within",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "aero2",
+      "desc": "beans",
+      "imgSrc":"../../app/asset/image/cup.jpg"
+    },{
+      "step": "aero3",
+      "desc": "the long high bridge",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    }
+  ],
+  "wave": [
+    {
+      "name": "Kalita Wave",
+      "step": "aero1",
+      "desc": "the door within",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    },
+    {
+      "step": "aero2",
+      "desc": "beans",
+      "imgSrc":"../../app/asset/image/cup.jpg"
+    },{
+      "step": "aero3",
+      "desc": "the long high bridge",
+      "imgSrc": "../../app/asset/image/cup.jpg"
+    }
+  ]
+
+}

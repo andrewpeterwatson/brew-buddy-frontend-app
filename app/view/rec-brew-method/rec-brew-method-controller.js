@@ -7,12 +7,12 @@ angular.module('brewBuddy')
 
 function RecBrewMethodController($log, $location, methodService, userSelectionsService) {
 
-  this.brewMethods = ['Chemex', 'French Press', 'Aeropress', 'Wave'];
+  this.brewMethods = ['chemex', 'press', 'aero', 'wave'];
 
   this.submitRecBrewMethod = function(method) {
     $log.debug('RecBrewMethodController.submitRecBrewMethod');
     userSelectionsService.updateBrewMethod(method);
     console.log('user select service brewMethod', userSelectionsService);
-    $location.path('/user/aroma');
+    $location.path('/user/brewguide');
   };
 }
