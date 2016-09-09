@@ -2,11 +2,11 @@
 
 const angular = require('angular');
 
-angular.module('brewBuddy').factory('flavorService',[
-  flavorService
+angular.module('brewBuddy').factory('appFlavorService',[
+  appFlavorService
 ]);
 
-function flavorService(){
+function appFlavorService(){
   let service = {};
 
 

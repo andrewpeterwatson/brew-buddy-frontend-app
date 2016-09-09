@@ -11,15 +11,20 @@ function UserSelectionsService($q, $log) {
   service.userSelections = {
     origin: null,
     brewMethod: null,
+    userFlavors: null,
+    userExpDesc: null,
+    userExpRating: null,
     aroma: null,
-    acidity: null,
-    userFlavors: null
+    acidityDesc: null,
+    finishLength: null,
+    finishBody: null
   };
 
   service.updateOrigin = function(origin) {
     $log.log('UserSelectionsService.updateOrigin');
     service.userSelections.origin = origin;
   };
+
   service.updateBrewMethod = function(method) {
     $log.log('UserSelectionsService.updateBrewMethod');
     service.userSelections.brewMethod = method;
@@ -29,13 +34,26 @@ function UserSelectionsService($q, $log) {
     service.userSelections.aroma = aroma;
     console.log('service.userSelections.aroma');
   };
-  service.updateAcidity = function(acidity) {
+  service.updateAcidity = function(desc, strength) {
     $log.log('UserSelectionsService.updateAcidity');
-    service.userSelections.acidity = acidity;
+    service.userSelections.acidityDesc = desc;
+    service.userSelections.acidityStrength = strength;
   };
   service.updateFlavors = function(flavorArr) {
     service.userSelections.userFlavors = flavorArr;
     console.log('user selections service flavors', service.userSelections.userFlavors);
+  };
+  service.updateFinish = function(finishLength, finishBody) {
+    $log.log('UserSelectionsService.updateFinish');
+    $log.log('UserSelectionsService.updateFinishBody');
+    service.userSelections.finishLength = finishLength;
+    service.userSelections.finishBody = finishBody;
+    console.log('length', service.userSelections.finishLength, 'body', service.userSelections.finishBody);
+  };
+  service.updateUserExp = function(desc, rating){
+    service.userSelections.userExpDesc = desc;
+    service.userSelections.userExpRating = rating;
+    console.log('user exp SERVICE',service.userSelections.userExpDesc, service.userSelections.userExpRating);
   };
 
   return service;

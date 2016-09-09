@@ -14,9 +14,9 @@ describe('testing acidity-service', function(){
       this.$httpBackend.verifyNoOutstandingExpectation();
     });
   });
-  it('should get acidityService: GET', () => {
+  it('TEST: fetchAciditys', () => {
     this.$httpBackend.expectGET(`${testUrl}/api/acidity`)
-    .respond(200, {_id: '1212', name: 'dataService', notes: [], _v: 0});
+    .respond(200, `${testUrl}/api/acidity`);
 
     this.acidityService.fetchAciditys()
     .then( data => {
@@ -30,19 +30,10 @@ describe('testing acidity-service', function(){
     this.$httpBackend.flush();
   });
   //
-  it('should get acidityService: POST', () => {
+  it('TEST: createAcidity', () => {
     this.$httpBackend.expectPOST(`${testUrl}/api/acidity`)
-    .respond(200, {_id: '1212', name: 'dataService', notes: [], _v: 0});
+    .respond(200, `${testUrl}/api/acidity`});
 
-    this.acidityService.postAcidity()
-    .then( data => {
-      expect(true).toBe(true);
-      expect(Array.isArray(data)).toBe(false);
-      // expect(data).toBe('Object');
-    })
-    .catch (err => {
-      expect(err).toBe(null);
-    });
-    this.$httpBackend.flush();
+    this.acidityService.
   });
 });

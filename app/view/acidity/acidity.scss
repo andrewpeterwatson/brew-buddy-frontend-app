@@ -1,0 +1,24 @@
+@import "_theme";
+
+.acidity-class {
+  position: fixed;
+  top: 30%;
+  right: 20%;
+  padding: 20px;
+  width: 60%;
+
+  .acidity-wrapper {
+    width: 500px;
+    // border: 1px solid green;
+    overflow: hidden;
+  }
+  .acidity-desc {
+    width: 300px;
+    float: left;
+    // border: 1px solid black;
+  }
+  .acidity-intensity {
+    // border: 1px solid red;
+    overflow: hidden;
+  }
+}
