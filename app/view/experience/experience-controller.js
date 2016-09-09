@@ -14,6 +14,7 @@ function ExperienceController($location, userSelectionsService){
     this.userExpDesc = text;
     userSelectionsService.updateUserExp(this.userExpDesc, this.userExpRating);
     console.log('userSelections', userSelectionsService.userSelections);
+    $location.path('/user/finishedbrew');
   };
   this.rateExp = function(rating){
     this.userExpRating;

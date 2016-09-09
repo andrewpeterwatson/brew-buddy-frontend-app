@@ -17,12 +17,11 @@ angular.module('brewBuddy')
 
     this.brewMethods = require('json!../../assets/brew-method-data/brew-methods.json');
     this.galleryIndex = 0;
-    // userSelectionsService.userSelections.brewMethod = 'press';
-    this.currentBrewMethod = userSelectionsService.userSelections.brewMethod;
+    this.currentBrewMethod = userSelectionsService.userSelections.methodId;
     console.log('currentBrewMethod', this.currentBrewMethod);
 
     this.stepForward = function() {
-      brewMethodGalleryService.cycleForward(this.galleryIndex, this.brewMethods[userSelectionsService.userSelections.brewMethod].length);
+      brewMethodGalleryService.cycleForward(this.galleryIndex, this.brewMethods[userSelectionsService.userSelections.methodId].length);
       this.galleryIndex = brewMethodGalleryService.galleryIndex;
     };
     this.stepBackward = function(){
