@@ -161,7 +161,6 @@ describe('testing brew-buddy-frontend-app services', function() {
           }]
         });
 
-
       this.methodService.createMethod(post)
         .then(res => {
           expect(res.status).toBe(200);
@@ -193,7 +192,6 @@ describe('testing brew-buddy-frontend-app services', function() {
             brewTimer: 22
           }]
         });
-
 
       this.methodService.updateMethod(put)
         .then(res => {
