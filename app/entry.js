@@ -40,6 +40,11 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'RecBrewMethodController',
     controllerAs: 'recBrewMethodCtrl'
   })
+  .when('/user/brewguide', {
+    template: require('./view/brew-method-guide/brew-method-guide.html'),
+    controller: 'BrewMethodGuideController',
+    controllerAs: 'brewGuideCtrl'
+  })
   .when('/user/aroma', {
     template: require('./view/aroma/aroma.html'),
     controller: 'AromaController',
@@ -65,6 +70,11 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'FinishController',
     controllerAs: 'finishCtrl'
   })
+  .when('/user/finishedbrew', {
+    template: require('./view/finished-brew/finished-brew.html'),
+    controller: 'FinishedBrewController',
+    controllerAs: 'finishedBrewCtrl'
+  })
   .when('/user/pastbrews', {
     template: require('./view/past-brews/past-brews.html'),
     controller: 'PastBrewsController',
@@ -86,12 +96,14 @@ require('./service/entry-service');
 require('./service/app-flavor-service');
 require('./service/user-selections-service');
 require('./service/aroma-service');
+require('./service/brew-method-gallery-service');
 // require('./service/acidity-service');
 
 // angular controllers
 require('./view/country-of-origin/country-of-origin-controller.js');
 require('./view/finish/finish-controller.js');
 require('./view/rec-brew-method/rec-brew-method-controller.js');
+require('./view/brew-method-guide/brew-method-guide-controller');
 require('./view/experience/experience-controller');
 require('./view/past-brews/past-brews-controller');
 require('./view/signup');
@@ -100,5 +112,8 @@ require('./view/home');
 require('./view/aroma');
 require('./view/acidity');
 require('./view/flavor');
+require('./view/finished-brew/finished-brew.js');
 require('./component/app-nav');
 require('./component/app-flavor-el');
+require('./component/app-brew-method-guide-gallery');
+require('./component/finished-brew-el');
