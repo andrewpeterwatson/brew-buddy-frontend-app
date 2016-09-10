@@ -13,16 +13,29 @@
 
   <div ng-if="pastBrewsCtrl.showModal" class="pastBrewModal">
 
-    <i class="fa fa-times" aria-hidden="true"
-    ng-click="pastBrewsCtrl.closeModal()"></i>
+    <div class="postcard">
 
-    <p class="rating"> {{ pastBrewsCtrl.selectedBrew.rating }}</p>
-    <p> {{ pastBrewsCtrl.selectedBrew.date }} </p>
-    <p> {{ pastBrewsCtrl.selectedBrew.originId }}</p>
-    <p> {{ pastBrewsCtrl.selectedBrew.methodId }}</p>
-    <p> {{ pastBrewsCtrl.selectedBrew.experience }}</p>
-    <p> {{ pastBrewsCtrl.selectedBrew.aromas }}</p>
-    <p> {{ pastBrewsCtrl.selectedBrew.acidity }}</p>
+      <div class="close-modal">
+        <i class="fa fa-times" aria-hidden="true"
+        ng-click="pastBrewsCtrl.closeModal()"></i>
+      </div>
+
+      <div class="postcard-left">
+        <p> Rating: </p>
+        <p class="rating"> {{ pastBrewsCtrl.selectedBrew.rating }}</p>
+      </div>
+      <div class="postcard-right">
+        <p> Made on: <b>{{ pastBrewsCtrl.selectedBrew.date }}</b> </p>
+        <p> Country of Origin: <b>{{ pastBrewsCtrl.selectedBrew.originId }}</b> </p>
+        <p> Brew Method: <b>{{ pastBrewsCtrl.selectedBrew.methodId }}</b> </p>
+
+        <p> The experience was <b>{{ pastBrewsCtrl.selectedBrew.experience }}</b>,
+          with <b><span ng-repeat="aroma in pastBrewsCtrl.selectedBrew.aromas"> {{ aroma }} </span></b> aromas. </p>
+        </p> The acidity was <b>{{ pastBrewsCtrl.selectedBrew.acidityStrength }}</b>
+        and <b>{{ pastBrewsCtrl.selectedBrew.acidity }}</b>, with a <b>{{ pastBrewsCtrl.selectedBrew.finish }}</b> finish and a <b>{{ pastBrewsCtrl.selectedBrew.body }}</b> body. Overall, this brew rates
+        a {{ pastBrewsCtrl.selectedBrew.rating }} out of 4. </p>
+      </div>
+    </div>
   </div>
 
   <div ng-hide="pastBrewsCtrl.pastBrews.length">
