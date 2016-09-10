@@ -41,7 +41,7 @@ function entryService($log, $q, $http, authService){
   service.fetchEntries = function() {
     return authService.getToken()
     .then(token => {
-      let url = `${__API_URL__}/api/entries`;
+      let url = `${__API_URL__}/api/entry/all`;
       let config = {
         headers: {
           'Accept': 'application/json',

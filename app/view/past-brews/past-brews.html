@@ -1,3 +1,5 @@
+<app-nav></app-nav>
+
 <div class="pastBrews" ng-init="pastBrewsCtrl.fetchPastBrews()">
 
   <h1> Past Brews </h1>
@@ -14,8 +16,13 @@
     <i class="fa fa-times" aria-hidden="true"
     ng-click="pastBrewsCtrl.closeModal()"></i>
 
-    <h2> {{ pastBrewsCtrl.selectedBrew.date }} </h2>
-    <p> {{ pastBrewsCtrl.selectedBrew.origin }}</p>
+    <p class="rating"> {{ pastBrewsCtrl.selectedBrew.rating }}</p>
+    <p> {{ pastBrewsCtrl.selectedBrew.date }} </p>
+    <p> {{ pastBrewsCtrl.selectedBrew.originId }}</p>
+    <p> {{ pastBrewsCtrl.selectedBrew.methodId }}</p>
+    <p> {{ pastBrewsCtrl.selectedBrew.experience }}</p>
+    <p> {{ pastBrewsCtrl.selectedBrew.aromas }}</p>
+    <p> {{ pastBrewsCtrl.selectedBrew.acidity }}</p>
   </div>
 
   <div ng-hide="pastBrewsCtrl.pastBrews.length">
