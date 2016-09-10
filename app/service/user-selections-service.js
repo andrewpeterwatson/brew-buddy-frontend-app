@@ -9,50 +9,51 @@ function UserSelectionsService($q, $log) {
   let service = {};
 
   service.userSelections = {
-    origin: null,
-    brewMethod: null,
-    userFlavors: null,
-    userExpDesc: null,
-    userExpRating: null,
-    aroma: null,
-    acidityDesc: null,
-    finishLength: null,
-    finishBody: null
+    date: new Date(),
+    originId: null,
+    methodId: null,
+    flavorId: null,
+    experience: null,
+    rating: null,
+    aromas: null,
+    acidity: null,
+    acidityStrength: null,
+    finish: null,
+    body: null
   };
 
   service.updateOrigin = function(origin) {
     $log.log('UserSelectionsService.updateOrigin');
-    service.userSelections.origin = origin;
+    service.userSelections.originId = origin;
   };
 
   service.updateBrewMethod = function(method) {
     $log.log('UserSelectionsService.updateBrewMethod');
-    service.userSelections.brewMethod = method;
+    service.userSelections.methodId = method;
   };
   service.updateAroma = function(aroma) {
     $log.log('UserSelectionsService.updateAroma');
-    service.userSelections.aroma = aroma;
+    service.userSelections.aromas = aroma;
     console.log('service.userSelections.aroma');
   };
   service.updateAcidity = function(desc, strength) {
     $log.log('UserSelectionsService.updateAcidity');
-    service.userSelections.acidityDesc = desc;
+    service.userSelections.acidity = desc;
     service.userSelections.acidityStrength = strength;
   };
   service.updateFlavors = function(flavorArr) {
-    service.userSelections.userFlavors = flavorArr;
-    console.log('user selections service flavors', service.userSelections.userFlavors);
+    service.userSelections.flavorId = flavorArr;
   };
   service.updateFinish = function(finishLength, finishBody) {
     $log.log('UserSelectionsService.updateFinish');
     $log.log('UserSelectionsService.updateFinishBody');
-    service.userSelections.finishLength = finishLength;
-    service.userSelections.finishBody = finishBody;
+    service.userSelections.finish = finishLength;
+    service.userSelections.body = finishBody;
     console.log('length', service.userSelections.finishLength, 'body', service.userSelections.finishBody);
   };
   service.updateUserExp = function(desc, rating){
-    service.userSelections.userExpDesc = desc;
-    service.userSelections.userExpRating = rating;
+    service.userSelections.experience = desc;
+    service.userSelections.rating = rating;
     console.log('user exp SERVICE',service.userSelections.userExpDesc, service.userSelections.userExpRating);
   };
 

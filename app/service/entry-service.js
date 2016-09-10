@@ -13,26 +13,52 @@ function entryService($log, $q, $http, authService){
   // add functionality to the service
   service.entries = [];
 
-  service.createEntry = function(data){
-    if(!token) return $q.reject(new Error('not token process not allowed'));
-    $log.debug('entryService.createEntry');
-    return $q((resolve, reject) => {
-      $http.post( url , data , {
-        headers: {
-          authorization: `Bearer ${authService.getToken()}`
-        }
-      })
-      .then( res  => {
-        $log.log(`POST ${url}:${res.status} success!`);
-        this.entries.push(res.data);
-        resolve(res.data);
-      })
-      .catch( err => {
-        $log.error(`POST ${url}:${err.status} failure!`);
-        reject(err);
-      });
-    });
+
+  service.createEntry = function(entry) {
+    return authService.getToken()
+  .then(token => {
+    let url = `${__API_URL__}/api/entry`;
+    let config = {
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    };
+    return $http.post(url, entry, config);
+  })
+  .then(res => {
+    $log.info('success on entries', res.data);
+    return $q.resolve(res.data);
+  })
+  .catch(err => {
+    $log.info('error on entries ', err);
+    return $q.reject(err);
+  });
   };
+
+
+
+  // service.createEntry = function(data){
+  //   console.log('create entery service hit', authService.token);
+  //   if(!token) return $q.reject(new Error('not token process not allowed'));
+  //   $log.debug('entryService.createEntry');
+  //   return $q((resolve, reject) => {
+  //     $http.post( url , data , {
+  //       headers: {
+  //         authorization: `Bearer ${authService.getToken()}`
+  //       }
+  //     })
+  //     .then( res  => {
+  //       $log.log(`POST ${url}:${res.status} success!`);
+  //       this.entries.push(res.data);
+  //       resolve(res.data);
+  //     })
+  //     .catch( err => {
+  //       $log.error(`POST ${url}:${err.status} failure!`);
+  //       reject(err);
+  //     });
+  //   });
+  // };
 
   service.fetchEntry = function(){
     if(!token) return $q.reject(new Error('not token process not allowed'));

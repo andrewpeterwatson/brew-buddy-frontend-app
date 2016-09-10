@@ -70,6 +70,11 @@ angular.module('brewBuddy', [ngRoute])
     controller: 'FinishController',
     controllerAs: 'finishCtrl'
   })
+  .when('/user/finishedbrew', {
+    template: require('./view/finished-brew/finished-brew.html'),
+    controller: 'FinishedBrewController',
+    controllerAs: 'finishedBrewCtrl'
+  })
   .when('/user/pastbrews', {
     template: require('./view/past-brews/past-brews.html'),
     controller: 'PastBrewsController',
@@ -107,6 +112,8 @@ require('./view/home');
 require('./view/aroma');
 require('./view/acidity');
 require('./view/flavor');
+require('./view/finished-brew/finished-brew.js');
 require('./component/app-nav');
 require('./component/app-flavor-el');
 require('./component/app-brew-method-guide-gallery');
+require('./component/create-entry');
