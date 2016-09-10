@@ -1,5 +1,6 @@
 'use strict';
 
+require('./_country-of-origin.scss');
 const angular = require('angular');
 
 angular.module('brewBuddy')
