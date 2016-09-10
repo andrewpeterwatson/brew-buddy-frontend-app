@@ -15,6 +15,7 @@ function SignupController($log, $location, authService){
     authService.signup(this.user)
     .then( token => {
       $log.info('token', token);
+      $location.path('/user');
     })
     .catch( err => {
       $log.error(err);

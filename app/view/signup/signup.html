@@ -2,19 +2,22 @@
   <form novalidate ng-submit="signupCtrl.signup()">
     <section class="form-group">
       <label for="username"> Username: </label>
-      <input class="form-control"
+      <input placeholder="username" class="form-control"
       name="username" type="text"
       ng-model="signupCtrl.user.username">
     </section>
 
     <section class="form-group">
       <label for="password"> Password: </label>
-      <input class="form-control"
+      <input placeholder="password" class="form-control"
       name="password" type="password"
       ng-model="signupCtrl.user.password">
     </section>
     <button type="submit" class="btn btn-primary">
       Sign Up
     </button>
+    <p>
+  Have an account? <a href="/#/signin">Sign in here!</a>
+</p>
   </form>
 </main>
