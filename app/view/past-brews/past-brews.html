@@ -1,14 +1,31 @@
-<div class="pastBrews">
+<app-nav></app-nav>
+
+<div class="pastBrews" ng-init="pastBrewsCtrl.fetchPastBrews()">
 
   <h1> Past Brews </h1>
 
   <ol>
-    <li ng-repeat="pastbrew in pastBrewsCtrl.fetchPastBrews()">
+    <li ng-repeat="pastbrew in pastBrewsCtrl.pastBrews"
+    ng-click="pastBrewsCtrl.showBrewModal(pastbrew)">
       {{ pastbrew.date }}
     </li>
   </ol>
 
-  <div ng-show="pastBrewsCtrl.fetchPastBrews === false">
+  <div ng-if="pastBrewsCtrl.showModal" class="pastBrewModal">
+
+    <i class="fa fa-times" aria-hidden="true"
+    ng-click="pastBrewsCtrl.closeModal()"></i>
+
+    <p class="rating"> {{ pastBrewsCtrl.selectedBrew.rating }}</p>
+    <p> {{ pastBrewsCtrl.selectedBrew.date }} </p>
+    <p> {{ pastBrewsCtrl.selectedBrew.originId }}</p>
+    <p> {{ pastBrewsCtrl.selectedBrew.methodId }}</p>
+    <p> {{ pastBrewsCtrl.selectedBrew.experience }}</p>
+    <p> {{ pastBrewsCtrl.selectedBrew.aromas }}</p>
+    <p> {{ pastBrewsCtrl.selectedBrew.acidity }}</p>
+  </div>
+
+  <div ng-hide="pastBrewsCtrl.pastBrews.length">
     <p> No past brews to show! </p>
   </div>
 
