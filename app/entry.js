@@ -116,4 +116,4 @@ require('./view/finished-brew/finished-brew.js');
 require('./component/app-nav');
 require('./component/app-flavor-el');
 require('./component/app-brew-method-guide-gallery');
-require('./component/create-entry');
+require('./component/finished-brew-el');
