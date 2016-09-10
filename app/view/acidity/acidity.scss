@@ -22,3 +22,8 @@
     overflow: hidden;
   }
 }
+.next-acidity {
+  &:hover {
+    text-decoration: underline;
+  }
+}

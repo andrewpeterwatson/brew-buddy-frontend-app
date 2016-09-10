@@ -7,3 +7,12 @@
   padding: 20px;
   width: 60%;
 }
+
+.btn-success {
+  height: 23px;
+}
+.next-aroma {
+  &:hover{
+    text-decoration: underline;
+  }
+}
