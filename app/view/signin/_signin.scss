@@ -3,13 +3,13 @@
 .app-signin {
 
   form {
-    // position: relative;
-    position: fixed;;
+
+    position: fixed;
     top: 30%;
-    right: 20%;
+    left: 30%;
     padding: 20px;
     background-color: $app-light;
-    width: 60%;
+    width: 45%;
   }
 
   img{

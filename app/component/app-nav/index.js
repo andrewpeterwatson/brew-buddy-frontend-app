@@ -15,9 +15,13 @@ angular.module('brewBuddy')
 });
 
 angular.module('brewBuddy')
-.controller('AppNavModalController', [AppNavModalController]);
+.controller('AppNavModalController', ['$log','$location','authService',AppNavModalController]);
 
-function AppNavModalController(){
+function AppNavModalController($log,$location,authService){
   this.showSection = false;
   this.name = 'tester';
+  this.logout = function(){
+    authService.logout()
+    .then(()=> $location.path('/home'));
+  };
 }
