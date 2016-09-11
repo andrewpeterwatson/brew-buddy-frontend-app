@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost:8080/#/user/finish -->
+<html lang="en" ng-app="brewBuddy" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Brew Buddy</title>
+
+  <script src="./Brew Buddy_files/bundle.js"></script>
+  <link rel="stylesheet" href="./Brew Buddy_files/bundle.css">
+<script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script></head>
+<body>
+
+  <app-main></app-main>
+  <!-- ngView: --><ng-view class="ng-scope"><app-nav class="ng-scope"><div class="app-nav">
+  <i class="fa fa-coffee" aria-hidden="true" ng-click="appNavModalCtrl.userPage()"></i>
+  <i class="fa fa-cog" aria-hidden="true" ng-click="appNavModalCtrl.showSection = !appNavModalCtrl.showSection"></i>
+</div>
+
+<!-- ngIf: appNavModalCtrl.showSection -->
+</app-nav>
+<div class="finish ng-scope">
+  <section class="nav">
+
+    <h2 class="navItem">Finish?</h2>
+    <div class="navItem">
+      <!-- <i class="fa fa-coffee fa-rotate-180 fa-2x">
+        <br><p class="fa fa-rotate-180">Sign Out</p>
+      </i> -->
+    </div>
+  </section>
+
+  <form class="inputForm ng-pristine ng-valid" novalidate="" name="finish" ng-submit="
+  finishCtrl.submitFinish(finishCtrl.finishLength, finishCtrl.finishBody)">
+    <div class="inputFormItemFinish">
+      <label class="finishLength">
+        <h3>Finish Length</h3>
+        <input type="radio" ng-model="finishCtrl.finishLength" value="Quick" class="ng-pristine ng-untouched ng-valid ng-empty" name="3">
+        Quick
+      </label><br>
+      <label>
+        <input type="radio" ng-model="finishCtrl.finishLength" value="Medium" class="ng-pristine ng-untouched ng-valid ng-empty" name="4">
+        Medium
+      </label><br>
+      <label>
+        <input type="radio" ng-model="finishCtrl.finishLength" value="Long" class="ng-pristine ng-untouched ng-valid ng-empty" name="5">
+        Long
+      </label><br>
+      <br>
+    </div>
+      <div class="inputFormItemFinishBody">
+      <label class="finishBody">
+        <h3>Finish Body</h3>
+        <input type="radio" ng-model="finishCtrl.finishBody" value="Light" class="ng-pristine ng-untouched ng-valid ng-empty" name="6">
+        Light
+      </label><br>
+      <label>
+        <input type="radio" ng-model="finishCtrl.finishBody" value="Medium" class="ng-pristine ng-untouched ng-valid ng-empty" name="7">
+        Medium
+      </label><br>
+      <label>
+        <input type="radio" ng-model="finishCtrl.finishBody" value="Full" class="ng-pristine ng-untouched ng-valid ng-empty" name="8">
+        Full
+      </label><br>
+      <button type="submit">Next</button>
+    </div>
+  </form>
+<br>
+
+ </div>
+</ng-view>
+
+
+
+</body></html>
