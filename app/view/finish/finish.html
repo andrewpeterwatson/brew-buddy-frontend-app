@@ -1,34 +1,49 @@
-<app-nav></app-nav>
-<div class="finish">
-  <h2>Finish</h2>
-<form novalidate name="finish" ng-submit="
-finishCtrl.submitFinish(finishCtrl.finishLength, finishCtrl.finishBody)">
-  <label>
-    <input type="radio" ng-model="finishCtrl.finishLength" value="Quick">
-    Quick
-  </label><br/>
-  <label>
-    <input type="radio" ng-model="finishCtrl.finishLength" value="Medium">
-    Medium
-  </label><br/>
-  <label>
-    <input type="radio" ng-model="finishCtrl.finishLength" value="Long">
-    Long
-  </label><br/>
-  <br/>
 
-  <label>
-    <input type="radio" ng-model="finishCtrl.finishBody" value="Light">
-    Light
-  </label><br/>
-  <label>
-    <input type="radio" ng-model="finishCtrl.finishBody" value="Medium">
-    Medium
-  </label><br/>
-  <label>
-    <input type="radio" ng-model="finishCtrl.finishBody" value="Full">
-    Full
-  </label><br/>
-<button type="submit">Next</button>
- </form>
+<div class="finish">
+  <section class="nav">
+    <img class="navItem" src="../../assets/images/brew-buddy-logo.png"/>
+    <h2 class="navItem">How Would You Rate the Finish</h2>
+    <div class="navItem">
+      <i class="fa fa-coffee fa-rotate-180 fa-2x">
+        <br><p class="fa fa-rotate-180">Sign Out</p>
+      </i>
+    </div>
+  </section>
+
+  <form class="inputForm" novalidate name="finish" ng-submit="
+  finishCtrl.submitFinish(finishCtrl.finishLength, finishCtrl.finishBody)">
+    <div class="inputFormItem">
+      <label class="finishLength">
+        <h3>Finish Length</h3>
+        <input type="radio" ng-model="finishCtrl.finishLength" value="Quick">
+        Quick
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="finishCtrl.finishLength" value="Medium">
+        Medium
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="finishCtrl.finishLength" value="Long">
+        Long
+      </label><br/>
+      <br/>
+
+      <label class="finishBody">
+        <h3>Finish Body</h3>
+        <input type="radio" ng-model="finishCtrl.finishBody" value="Light">
+        Light
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="finishCtrl.finishBody" value="Medium">
+        Medium
+      </label><br/>
+      <label>
+        <input type="radio" ng-model="finishCtrl.finishBody" value="Full">
+        Full
+      </label><br/>
+      <button class="btn btn-primary" type="submit">Next</button>
+    </div>
+  </form>
+</br>
+
  </div>

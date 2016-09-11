@@ -1,5 +1,6 @@
 'use strict';
 
+require('./finish.scss');
 const angular = require('angular');
 
 angular.module('brewBuddy')
