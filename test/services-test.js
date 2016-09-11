@@ -529,3 +529,4 @@ describe('testing brew-buddy-frontend-app services', function() {
   });
 
 });
+>>>>>>> e5e7b09815d980af7a6bc648c5f6fc4c400fc330

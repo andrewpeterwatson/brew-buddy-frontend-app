@@ -94,6 +94,7 @@ require('./service/entry-service');
 require('./service/app-flavor-service');
 require('./service/user-selections-service');
 require('./service/aroma-service');
+require('./service/acidity-service');
 require('./service/brew-method-gallery-service');
 
 // angular controllers
