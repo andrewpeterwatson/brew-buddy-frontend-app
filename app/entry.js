@@ -86,8 +86,6 @@ angular.module('brewBuddy', [ngRoute])
 }]);
 
 // angular services
-// angular components
-
 require('./service/auth-service');
 require('./service/origin-service');
 require('./service/method-service');
