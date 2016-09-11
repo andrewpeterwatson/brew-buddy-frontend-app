@@ -19,7 +19,7 @@ function CountryOfOriginController($log, $location, originService, userSelection
     'Ethiopia',
     'Kenya',
     'Columbia',
-    'Indonesia',
+    'Indonesia'
   ];
 
   this.submitOrigin = function(origin) {

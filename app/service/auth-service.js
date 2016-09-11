@@ -31,6 +31,7 @@ function authService( $log, $q, $http, $window){
     $window.localStorage.removeItem('token');
     token = null;
     return $q.resolve();
+
   };
 
   service.signup = function(user){
