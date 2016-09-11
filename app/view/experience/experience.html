@@ -1,13 +1,27 @@
+<app-nav></app-nav>
+
 <main class="experience">
+
+  <form>
   <h1 class="expName">experience</h1>
-
-
   <form novalidate class="exp-desc">
-  <input class="expInput" type="text" placeholder="how was it?" ng-model="expCtrl.userExpDesc">
+    <input class="expInput" type="text" placeholder="how was it?" ng-model="expCtrl.userExpDesc">
   </form>
-  <i id="starOne" class="fa fa-star expStars" ng-click="expCtrl.rateExp(1)"></i>
-  <i id="starTwo" class="fa fa-star expStars" ng-click="expCtrl.rateExp(2)"></i>
-  <i id="starThree" class="fa fa-star expStars" ng-click="expCtrl.rateExp(3)"></i>
-  <i id="starFour" class="fa fa-star expStars" ng-click="expCtrl.rateExp(4)"></i>
+
+
+  <fieldset class="star-container">
+  <span class="star-group">
+  <input type="radio" id="rating-4" name="rating" value="4" checked="checked" ng-click="expCtrl.rateExp(4)"/>
+  <label for="rating-4">4</label>
+  <input type="radio" id="rating-3" name="rating" value="3" ng-click="expCtrl.rateExp(3)"/>
+  <label for="rating-3">3</label>
+  <input type="radio" id="rating-2" name="rating" value="2" ng-click="expCtrl.rateExp(2)"/>
+  <label for="rating-2">2</label>
+  <input type="radio" id="rating-1" name="rating" value="1" ng-click="expCtrl.rateExp(1)"/>
+  <label for="rating-1">1</label>
+  </span>
+  </fieldset>
+  </form>
+
   <button id="expBtn" type="button" name="button" ng-click="expCtrl.submit(expCtrl.userExpDesc)">submit</button>
 </main>
