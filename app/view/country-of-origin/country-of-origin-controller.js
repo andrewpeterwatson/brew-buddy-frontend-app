@@ -1,5 +1,6 @@
 'use strict';
 
+require('./_country-of-origin.scss');
 const angular = require('angular');
 
 angular.module('brewBuddy')
@@ -18,7 +19,7 @@ function CountryOfOriginController($log, $location, originService, userSelection
     'Ethiopia',
     'Kenya',
     'Columbia',
-    'Indonesia',
+    'Indonesia'
   ];
 
   this.submitOrigin = function(origin) {

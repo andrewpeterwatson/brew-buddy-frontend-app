@@ -13,7 +13,7 @@ function SigninController($log, $location, authService){
   this.getToken = function(){
     $log.debug('signinCtrl.getToken');
     authService.getToken()
-    .then( () => $location.path('/home'));
+    .then( () => $location.path('/user'));
   };
 
   this.signin = function(){

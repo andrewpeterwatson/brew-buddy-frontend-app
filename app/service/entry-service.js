@@ -38,6 +38,47 @@ function entryService($log, $q, $http, authService){
 
 
 
+  service.fetchEntries = function() {
+    return authService.getToken()
+    .then(token => {
+      let url = `${__API_URL__}/api/entry/all`;
+      let config = {
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      };
+
+      return $http.get(url, config);
+    })
+    .then(res => {
+      $log.info('success -- entries ', res.data);
+      return $q.resolve(res.data);
+    })
+    .catch(err => {
+      $log.info('error -- entries ', err);
+      return $q.reject(err);
+    });
+  };
+
+  service.fetchEntry = function(entryId) {
+    return authService.getToken()
+    .then(token => {
+      let url = `${__API_URL__}/api/entry/${entryId}`;
+      let config = {
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      };
+
+      return $http.get(url, config);
+    })
+    .then(res => $q.resolve(res.data))
+    .catch(err => $q.reject(err));
+  };
+
+
   // service.createEntry = function(data){
   //   console.log('create entery service hit', authService.token);
   //   if(!token) return $q.reject(new Error('not token process not allowed'));
@@ -60,27 +101,27 @@ function entryService($log, $q, $http, authService){
   //   });
   // };
 
-  service.fetchEntry = function(){
-    if(!token) return $q.reject(new Error('not token process not allowed'));
-    $log.debug('entryService.fetchEntries');
-    return $q((resolve, reject) => {
-      $http.get(url, {
-        headers: {
-          Authorization: `Bearer ${authService.getToken()}`
-        }
-      })
-        .then( res => {
-          $log.log(`GET ${url}:${res.status} success!`);
-          this.entries = res.data;
-          console.log('hitting', this.entries);
-          resolve(this.entries);
-        })
-        .catch( err => {
-          $log.error(`GET ${url}:${err.status} failure!`);
-          reject(err);
-        });
-    });
-  };
+  // service.fetchEntry = function(){
+  //   if(!token) return $q.reject(new Error('not token process not allowed'));
+  //   $log.debug('entryService.fetchEntries');
+  //   return $q((resolve, reject) => {
+  //     $http.get(url, {
+  //       headers: {
+  //         Authorization: `Bearer ${authService.getToken()}`
+  //       }
+  //     })
+  //       .then( res => {
+  //         $log.log(`GET ${url}:${res.status} success!`);
+  //         this.entries = res.data;
+  //         console.log('hitting', this.entries);
+  //         resolve(this.entries);
+  //       })
+  //       .catch( err => {
+  //         $log.error(`GET ${url}:${err.status} failure!`);
+  //         reject(err);
+  //       });
+  //   });
+  // };
 
   service.updateEntry = function(data){
     if(!token) return $q.reject(new Error('not token process not allowed'));

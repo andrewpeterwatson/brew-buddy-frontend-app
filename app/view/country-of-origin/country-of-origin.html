@@ -1,12 +1,13 @@
 <app-nav></app-nav>
 
 <div class="countryoforigin">
-  <h2> Country of Origin </h2>
+  <div class="value-container">
+  <h2 class="originName">Origin?</h2>
 
   <form novalidate
   name="countryOfOriginForm"
   ng-submit="countryOfOriginCtrl.submitOrigin(selected)">
-    <label for="countryOfOrigin"> Country of Origin </label>
+    <label for="countryOfOrigin"></label>
 
     <select name="countryOfOrigin"
     ng-click="countryOfOriginCtrl.dropdownSelector()"
@@ -22,4 +23,5 @@
 
     <button type="submit"> Next </button>
   </form>
+</div>
 </div>

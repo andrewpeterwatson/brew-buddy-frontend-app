@@ -18,7 +18,6 @@ angular.module('brewBuddy')
     this.brewMethods = require('json!../../assets/brew-method-data/brew-methods.json');
     this.galleryIndex = 0;
     this.currentBrewMethod = userSelectionsService.userSelections.methodId;
-    console.log('currentBrewMethod', this.currentBrewMethod);
 
     this.stepForward = function() {
       brewMethodGalleryService.cycleForward(this.galleryIndex, this.brewMethods[userSelectionsService.userSelections.methodId].length);
