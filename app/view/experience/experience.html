@@ -1,13 +1,13 @@
 <main class="experience">
-  <h1>experience</h1>
+  <h1 class="expName">experience</h1>
 
 
   <form novalidate class="exp-desc">
-  <input type="text" placeholder="how was it?" ng-model="expCtrl.userExpDesc">
+  <input class="expInput" type="text" placeholder="how was it?" ng-model="expCtrl.userExpDesc">
   </form>
-  <i id="starOne" class="fa fa-star" ng-click="expCtrl.rateExp(1)"></i>
-  <i id="starTwo" class="fa fa-star" ng-click="expCtrl.rateExp(2)"></i>
-  <i id="starThree" class="fa fa-star" ng-click="expCtrl.rateExp(3)"></i>
-  <i id="starFour" class="fa fa-star" ng-click="expCtrl.rateExp(4)"></i>
-  <button type="button" name="button" ng-click="expCtrl.submit(expCtrl.userExpDesc)">submit</button>
+  <i id="starOne" class="fa fa-star expStars" ng-click="expCtrl.rateExp(1)"></i>
+  <i id="starTwo" class="fa fa-star expStars" ng-click="expCtrl.rateExp(2)"></i>
+  <i id="starThree" class="fa fa-star expStars" ng-click="expCtrl.rateExp(3)"></i>
+  <i id="starFour" class="fa fa-star expStars" ng-click="expCtrl.rateExp(4)"></i>
+  <button id="expBtn" type="button" name="button" ng-click="expCtrl.submit(expCtrl.userExpDesc)">submit</button>
 </main>

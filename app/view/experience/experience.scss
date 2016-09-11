@@ -1,12 +1,39 @@
 .experience{
+    width: 700px;
+    height: 200px;
+    margin-left: 30%;
+    margin-top: 18%;
+  }
 
-// i:hover {
-//   color: red;
-// }
-#starThree:hover {
+  .expName {
+    font-size: 6em;
+  }
+
+.expInput {
+  width: 430px;
+}
+
+.expStars {
+  font-size: 4.5em;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+#expBtn {
+float: right;
+width: 180px;
+height: 29px;
+margin-top: 3%;
+margin-right: 56%;
+}
+
+#starOne {
+  margin-left: 35px;
+}
+#starThree {
+  font-: 4.5em;
   color: red;
 }
 #starFour:hover ~ #starOne {
     background: #ccc
-}
 }
