@@ -2,13 +2,13 @@
 
 <form novalidate class="acidity-class" name="desc" >
   <h1>Acidity?</h1>
-  
+
 <div class="acidity-wrapper">
   <div class="acidity-desc">
     Desc:
     <input class="acidity-input" type="text" require ng-model="acidityCtrl.acidDesc"/>
     <!-- <button class="btb btn-success" ng-click="acidityCtrl.nextPageFlavor(acidity)"> -->
-    <button type="submit"> Next </button>
+    <button ng-click="acidityCtrl.nextPageFlavor(acidity)" type="submit"> Next </button>
       <!-- <p class="next-acidity">NEXT</p> </button> -->
   </div>
 
