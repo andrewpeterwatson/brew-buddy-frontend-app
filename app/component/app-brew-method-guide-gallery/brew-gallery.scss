@@ -1,4 +1,4 @@
-// @import "../../scss/_theme.scss";
+// @import "../../../scss/lib/_theme.scss";
 button {
   border: none;
 }
@@ -13,7 +13,7 @@ button {
 .cycleButton {
   position: absolute;
   z-index: 3;
-  background-color: slategrey;
+  background-color: #08ECFF;
   color: rgba(#333232, 0.87);
   border: 0;
   height: 150px;
@@ -23,7 +23,6 @@ button {
   font-size: 2.5em;
 
   &:hover {
-    // background-color: $app-light;
     color: #9e9e9e;
   };
 }
