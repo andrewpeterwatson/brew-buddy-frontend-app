@@ -1,0 +1,27 @@
+.userpage {
+  background-image: url('../../assets/images/brew-buddy-logo.png');
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.user-welcome {
+  text-align: right;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 5em;
+  margin-right: 1em;
+  padding-bottom: 2em;
+}
+
+.user-menu {
+
+  text-align: center;
+  margin: auto;
+
+  li {
+    padding: 5px;
+    list-style-type: none;
+    margin: auto;
+  }
+
+}
