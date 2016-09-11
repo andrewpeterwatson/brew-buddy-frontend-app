@@ -24,4 +24,7 @@ function AppNavModalController($log,$location,authService){
     authService.logout()
     .then(()=> $location.path('/home'));
   };
+  this.userPage = function(){
+    $location.path('/user');
+  };
 }
