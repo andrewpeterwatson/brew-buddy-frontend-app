@@ -1,20 +1,72 @@
+.flavor-div{
+  width: 100%;
+  height: 100%;
+}
+
+
+.li-container{
+  width: 904px;
+  height: 300px;
+  margin-left: 13%;
+}
+
 .app-flavor-el {
+  list-style-type: none;
   text-decoration: none;
   width: 100%;
+  margin-top: 5%;
 }
 li {
-  text-decoration: none;
+  list-style-type: none;
+  display: inline-block;
+  margin: -1px;
+  padding: 0;
   width: 300px;
 }
 
 .flav-btn {
   border: 0;
   padding: 0;
-  border: red 1px solid;
   width: 300px !important;
   display: inline-block;
 }
+.next-page{
+  border: 0;
+  padding: 0;
+  width: 300px !important;
+  margin-left: 35.5%;
+}
+
+.flav-type-btn{
+  outline: 1px solid white;
+  border: 0;
+  padding: 0;
+  width: 300px !important;
+  display: inline-block;
+}
+
 .name-el {
-  text-decoration: none;
+  font-size: 6em;
+  margin-left: 35%;
+}
+.flavor-titles{
   font-size: 3em;
+  margin-left: 20%;
+}
+
+.another-btn{
+  border: 0;
+  padding: 0;
+  width: 300px !important;
+  display: inline-block;
+  margin-left: 190px;
+  margin-top: 20px;
+}
+.back-btn {
+  border: 0;
+  padding: 0;
+  width: 300px !important;
+  display: inline-block;
+  margin-left: 190px;
+  margin-top: 20px;
 }
