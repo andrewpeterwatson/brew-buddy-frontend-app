@@ -95,9 +95,9 @@ require('./service/app-flavor-service');
 require('./service/user-selections-service');
 require('./service/aroma-service');
 require('./service/brew-method-gallery-service');
-// require('./service/acidity-service');
 
 // angular controllers
+require('./view/user');
 require('./view/country-of-origin/country-of-origin-controller.js');
 require('./view/finish/finish-controller.js');
 require('./view/rec-brew-method/rec-brew-method-controller.js');
