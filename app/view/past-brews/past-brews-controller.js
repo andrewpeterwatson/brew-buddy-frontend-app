@@ -1,5 +1,7 @@
 'use strict';
 
+require('./_past-brews.scss');
+
 const angular = require('angular');
 angular.module('brewBuddy')
 .controller('PastBrewsController', ['$log', '$location', 'userSelectionsService', 'entryService', PastBrewsController]);
@@ -19,25 +21,6 @@ function PastBrewsController($log, $location, userSelectionsService, entryServic
       return false;
     });
   };
-
-  // this.fetchPastBrews = function() {
-  //   this.pastBrews = [
-  //     {
-  //       origin: 'Antarctica',
-  //       brewMethod: 'Smash into some rocks',
-  //       flavor: 'butts',
-  //       userExpRating: 2,
-  //       date: 'right now'
-  //     },
-  //     {
-  //       origin: 'Over there by yonder hills',
-  //       brewMethod: 'Cover with chocolate then eat them',
-  //       flavor: 'chocolatey',
-  //       userExpRating: 4,
-  //       date: 'also now'
-  //     }
-  //   ];
-  // };
 
   this.showBrewModal = function(brew) {
     console.log('thee brew ', brew);
