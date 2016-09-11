@@ -1,8 +1,8 @@
 <app-nav></app-nav>
 <div class="finish">
   <section class="nav">
-    <img class="navItem" src="../../assets/images/brew-buddy-logo.png"/>
-    <h2 class="navItem">How Would You Rate the Finish</h2>
+
+    <h2 class="navItem">Finish?</h2>
     <div class="navItem">
       <!-- <i class="fa fa-coffee fa-rotate-180 fa-2x">
         <br><p class="fa fa-rotate-180">Sign Out</p>
@@ -12,7 +12,7 @@
 
   <form class="inputForm" novalidate name="finish" ng-submit="
   finishCtrl.submitFinish(finishCtrl.finishLength, finishCtrl.finishBody)">
-    <div class="inputFormItem">
+    <div class="inputFormItemFinish">
       <label class="finishLength">
         <h3>Finish Length</h3>
         <input type="radio" ng-model="finishCtrl.finishLength" value="Quick">
@@ -27,7 +27,8 @@
         Long
       </label><br/>
       <br/>
-
+    </div>
+      <div class="inputFormItemFinishBody">
       <label class="finishBody">
         <h3>Finish Body</h3>
         <input type="radio" ng-model="finishCtrl.finishBody" value="Light">
@@ -41,8 +42,9 @@
         <input type="radio" ng-model="finishCtrl.finishBody" value="Full">
         Full
       </label><br/>
-      <button class="btn btn-success btn-lg btn-block" type="submit">Next</button>
+      <button id="nextButton" type="submit">Next</button></div>
     </div>
+    <br>
   </form>
 </br>
 
