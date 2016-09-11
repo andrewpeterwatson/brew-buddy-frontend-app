@@ -13,7 +13,7 @@ button {
 .cycleButton {
   position: absolute;
   z-index: 3;
-  // background-color: $app-dark;
+  background-color: slategrey;
   color: rgba(#333232, 0.87);
   border: 0;
   height: 150px;
@@ -35,7 +35,7 @@ button {
 
 #cycle-forward {
   float: right;
-  margin-left: 96.5%;
+  margin-left: 94.5%;
 }
 
 .recipeContainer {

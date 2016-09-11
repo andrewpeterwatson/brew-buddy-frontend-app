@@ -1,8 +1,11 @@
-<div>
+<app-nav></app-nav>
 
+<div>
+<div class="value-container">
+<h2 class="method-name">Method?</h2>
   <form novalidate name="recBrewMethodForm" ng-submit="recBrewMethodCtrl.submitRecBrewMethod(selected)">
 
-  <label for="recMethod"> Brew Method: </label>
+  <label for="recMethod"></label>
 
   <select name="recMethod" ng-model="selected">
     <option ng-repeat="method in recBrewMethodCtrl.brewMethods track by $index" value="{{ method }}">
@@ -13,4 +16,5 @@
 
 </form>
 
+</div>
 </div>

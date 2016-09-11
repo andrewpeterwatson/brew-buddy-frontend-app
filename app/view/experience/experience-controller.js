@@ -4,9 +4,9 @@ require('./experience.scss');
 const angular = require('angular');
 
 angular.module('brewBuddy')
-.controller('ExperienceController', ['$location', 'userSelectionsService', ExperienceController]);
+.controller('ExperienceController', ['$log', '$location', 'userSelectionsService','entryService', ExperienceController]);
 
-function ExperienceController($location, userSelectionsService){
+function ExperienceController($log, $location, userSelectionsService, entryService){
   this.userExpDesc = '';
   this.userExpRating;
 
@@ -14,6 +14,12 @@ function ExperienceController($location, userSelectionsService){
     this.userExpDesc = text;
     userSelectionsService.updateUserExp(this.userExpDesc, this.userExpRating);
     console.log('userSelections', userSelectionsService.userSelections);
+
+    entryService.createEntry(userSelectionsService.userSelections)
+    .then(entry => $log.info('entry created', entry))
+    .catch(err => $log.err('no entry created', err));
+
+    $location.path('/user/finishedbrew');
   };
   this.rateExp = function(rating){
     this.userExpRating;

@@ -1,5 +1,6 @@
 'use strict';
 
+require('./_country-of-origin.scss');
 const angular = require('angular');
 
 angular.module('brewBuddy')
@@ -13,34 +14,17 @@ function CountryOfOriginController($log, $location, originService, userSelection
   // });
 
   this.origins = [
-      {
-      "country": "Guatemala",
-      "reqMethod":"French Press"
-    },
-    {
-      "country": "Brazil",
-      "reqMethod":"French Press"
-    },
-    {
-      "country": "Ethiopia",
-      "reqMethod":"Chemex"
-    },
-    {
-      "country": "Kenya",
-      "reqMethod":"Chemex"
-    },
-    {
-      "country": "Columbia",
-      "reqMethod":"French Press"
-    },
-    {
-      "country": "Indonesia",
-      "reqMethod":"Siphon Pot"
-  }
-  ]
+    'Guatemala',
+    'Brazil',
+    'Ethiopia',
+    'Kenya',
+    'Columbia',
+    'Indonesia'
+  ];
 
   this.submitOrigin = function(origin) {
     userSelectionsService.updateOrigin(origin);
+    console.log('origin', origin);
     $location.path('/user/method');
   };
 
